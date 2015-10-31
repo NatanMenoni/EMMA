@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "creativehub",
+    "packageName": "com.emmaprojects.creativehub",
+    "packageFolder": "com/emmaprojects/creativehub",
+    "authenticationType": "oauth2",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "no",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "ee626756bc8c6009da3d9fb1049f0d79fbd19c42",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}
