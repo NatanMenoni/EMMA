@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="creativehubApp.workPiece.detail.title">WorkPiece</span> {{workPiece.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.description">Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workPiece.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.imagePath">ImagePath</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workPiece.imagePath}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.yearOfCreation">YearOfCreation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workPiece.yearOfCreation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.inputDate">InputDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workPiece.inputDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.tags">tags</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="tag.detail({id:workPiece.tags.id})">{{workPiece.tags.name}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workPiece.user">user</span>
+                </td>
+                <td>
+                    {{workPiece.user.login}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,30 @@
+{
+    "creativehubApp": {
+        "profile" : {
+            "home": {
+                "title": "Profiles",
+                "createLabel": "Créer un nouveau Profile",
+                "createOrEditLabel": "Créer ou éditer un Profile"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Profile {{ id }} ?"
+            },
+            "detail": {
+                "title": "Profile"
+            },
+            "aboutMe": "AboutMe",
+            "facebookLink": "FacebookLink",
+            "linkedinLink": "LinkedinLink",
+            "profilePicturePath": "ProfilePicturePath",
+            "coverPicturePath": "CoverPicturePath",
+            "promotionPicturePath": "PromotionPicturePath",
+            "workCollection": "WorkCollection",
+            "user": "User",
+            "profileEvent": "ProfileEvent",
+            "workExperience": "WorkExperience",
+            "education": "Education",
+            "award": "Award"
+        }
+    }
+}
+

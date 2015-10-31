@@ -1,0 +1,59 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "workCollection",
+            "otherEntityName": "workCollection",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "workPieces"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "tags",
+            "otherEntityName": "tag",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "categorie",
+            "otherEntityName": "category",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "workPiece"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "imagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "yearOfCreation",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "inputDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20151031015923",
+    "dto": "no",
+    "pagination": "pager"
+}

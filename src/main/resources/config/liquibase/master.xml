@@ -14,5 +14,10 @@
     <include file="classpath:config/liquibase/changelog/20151031011046_added_entity_Telephone.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151031011319_added_entity_Document.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20151031011409_added_entity_UserType.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151031013921_added_entity_Tag.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151031014531_added_entity_Category.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151031015923_added_entity_WorkPiece.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151031020405_added_entity_WorkCollection.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20151031020916_added_entity_Profile.xml" relativeToChangelogFile="false"/>
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

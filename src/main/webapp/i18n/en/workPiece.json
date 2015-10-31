@@ -1,0 +1,28 @@
+{
+    "creativehubApp": {
+        "workPiece" : {
+            "home": {
+                "title": "WorkPieces",
+                "createLabel": "Create a new WorkPiece",
+                "createOrEditLabel": "Create or edit a WorkPiece"
+            },
+            "created": "A new WorkPiece is created with identifier {{ param }}",
+            "updated": "A WorkPiece is updated with identifier {{ param }}",
+            "deleted": "A WorkPiece is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete WorkPiece {{ id }}?"
+            },
+            "detail": {
+                "title": "WorkPiece"
+            },
+            "description": "Description",
+            "imagePath": "ImagePath",
+            "yearOfCreation": "YearOfCreation",
+            "inputDate": "InputDate",
+            "workCollection": "WorkCollection",
+            "tags": "Tags",
+            "user": "User",
+            "categorie": "Categorie"
+        }
+    }
+}

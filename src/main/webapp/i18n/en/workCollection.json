@@ -1,0 +1,24 @@
+{
+    "creativehubApp": {
+        "workCollection" : {
+            "home": {
+                "title": "WorkCollections",
+                "createLabel": "Create a new WorkCollection",
+                "createOrEditLabel": "Create or edit a WorkCollection"
+            },
+            "created": "A new WorkCollection is created with identifier {{ param }}",
+            "updated": "A WorkCollection is updated with identifier {{ param }}",
+            "deleted": "A WorkCollection is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete WorkCollection {{ id }}?"
+            },
+            "detail": {
+                "title": "WorkCollection"
+            },
+            "description": "Description",
+            "date": "Date",
+            "coverImagePath": "CoverImagePath",
+            "workPiece": "WorkPiece"
+        }
+    }
+}

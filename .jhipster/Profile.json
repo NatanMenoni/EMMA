@@ -1,0 +1,81 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "workCollection",
+            "otherEntityName": "workCollection",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profile"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "ownerSide": false
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "profileEvent",
+            "otherEntityName": "profileEvent",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profile"
+        },
+        {
+            "relationshipId": 4,
+            "relationshipName": "workExperience",
+            "otherEntityName": "workExperience",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profile"
+        },
+        {
+            "relationshipId": 5,
+            "relationshipName": "education",
+            "otherEntityName": "education",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profile"
+        },
+        {
+            "relationshipId": 6,
+            "relationshipName": "award",
+            "otherEntityName": "award",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "profile"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "aboutMe",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "facebookLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "linkedinLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "profilePicturePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "coverPicturePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "promotionPicturePath",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031020916",
+    "dto": "no",
+    "pagination": "pager"
+}

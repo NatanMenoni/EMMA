@@ -15,6 +15,11 @@
                 "telephone": "Telephone",
                 "document": "Document",
                 "userType": "UserType",
+                "tag": "Tag",
+                "category": "Category",
+                "workPiece": "WorkPiece",
+                "workCollection": "WorkCollection",
+                "profile": "Profile",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

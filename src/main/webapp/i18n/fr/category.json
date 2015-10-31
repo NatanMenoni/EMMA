@@ -1,0 +1,24 @@
+{
+    "creativehubApp": {
+        "category" : {
+            "home": {
+                "title": "Categorys",
+                "createLabel": "Créer un nouveau Category",
+                "createOrEditLabel": "Créer ou éditer un Category"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Category {{ id }} ?"
+            },
+            "detail": {
+                "title": "Category"
+            },
+            "name": "Name",
+            "description": "Description",
+            "level": "Level",
+            "imagePath": "ImagePath",
+            "subCategories": "SubCategories",
+            "workPieces": "WorkPieces"
+        }
+    }
+}
+
