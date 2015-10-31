@@ -38,6 +38,17 @@ public class WorkExperience implements Serializable {
     @Column(name = "job_description")
     private String jobDescription;
 
+    @ManyToOne
+    private Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
     public Long getId() {
         return id;
     }

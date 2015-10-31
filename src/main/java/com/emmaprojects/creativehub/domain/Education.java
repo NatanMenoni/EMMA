@@ -43,6 +43,17 @@ public class Education implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne
+    private Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
     public Long getId() {
         return id;
     }

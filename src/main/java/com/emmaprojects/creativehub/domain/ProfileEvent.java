@@ -35,6 +35,17 @@ public class ProfileEvent implements Serializable {
     @Column(name = "venue")
     private String venue;
 
+    @ManyToOne
+    private Profile profile;
+
+    public Profile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(Profile profile) {
+        this.profile = profile;
+    }
+
     public Long getId() {
         return id;
     }

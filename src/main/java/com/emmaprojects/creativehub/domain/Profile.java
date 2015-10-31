@@ -37,7 +37,7 @@ public class Profile implements Serializable {
     @Column(name = "promotion_picture_path")
     private String promotionPicturePath;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "profile")
     @JsonIgnore
     private Set<WorkCollection> workCollections = new HashSet<>();
 
@@ -45,19 +45,19 @@ public class Profile implements Serializable {
     @JsonIgnore
     private User user;
 
-    @OneToMany()
+    @OneToMany(mappedBy = "profile")
     @JsonIgnore
     private Set<ProfileEvent> profileEvents = new HashSet<>();
 
-    @OneToMany()
+    @OneToMany(mappedBy = "profile")
     @JsonIgnore
     private Set<WorkExperience> workExperiences = new HashSet<>();
 
-    @OneToMany()
+    @OneToMany(mappedBy = "profile")
     @JsonIgnore
     private Set<Education> educations = new HashSet<>();
 
-    @OneToMany()
+    @OneToMany(mappedBy = "profile")
     @JsonIgnore
     private Set<Award> awards = new HashSet<>();
 

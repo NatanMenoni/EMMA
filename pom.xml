@@ -45,7 +45,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <javax.inject.version>1</javax.inject.version>
-        <liquibase.version>3.4.1</liquibase.version>
+        <liquibase.version>3.3.1</liquibase.version>
         <liquibase-slf4j.version>1.2.1</liquibase-slf4j.version>
         <liquibase-hibernate4.version>3.5</liquibase-hibernate4.version>
         <mapstruct.version>1.0.0.CR1</mapstruct.version>
@@ -540,7 +540,7 @@
                     <url>jdbc:mysql://localhost:3306/creativehub</url>
                     <defaultSchemaName>creativehub</defaultSchemaName>
                     <username>root</username>
-                    <password></password>
+                    <password>root</password>
                     <referenceUrl>hibernate:spring:com.emmaprojects.creativehub.domain?dialect=org.hibernate.dialect.MySQLInnoDBDialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
