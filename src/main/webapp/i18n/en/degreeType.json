@@ -1,0 +1,13 @@
+{
+    "creativehubApp": {
+        "DegreeType" : {
+            "null": "",
+            "HighSchool": "HighSchool",
+            "BachelorDegree": "BachelorDegree",
+            "MasterDegree": "MasterDegree",
+            "MBA": "MBA",
+            "PhD": "PhD",
+            "Other": "Other"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "creativehubApp": {
+        "education" : {
+            "home": {
+                "title": "Educations",
+                "createLabel": "Créer un nouveau Education",
+                "createOrEditLabel": "Créer ou éditer un Education"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Education {{ id }} ?"
+            },
+            "detail": {
+                "title": "Education"
+            },
+            "institutionName": "InstitutionName",
+            "startingYear": "StartingYear",
+            "finishingYear": "FinishingYear",
+            "degree": "Degree",
+            "degreeOtherDescription": "DegreeOtherDescription",
+            "fieldOfStudy": "FieldOfStudy",
+            "careerName": "CareerName",
+            "description": "Description"
+        }
+    }
+}
+

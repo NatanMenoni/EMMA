@@ -1,0 +1,27 @@
+{
+    "creativehubApp": {
+        "workExperience" : {
+            "home": {
+                "title": "WorkExperiences",
+                "createLabel": "Create a new WorkExperience",
+                "createOrEditLabel": "Create or edit a WorkExperience"
+            },
+            "created": "A new WorkExperience is created with identifier {{ param }}",
+            "updated": "A WorkExperience is updated with identifier {{ param }}",
+            "deleted": "A WorkExperience is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete WorkExperience {{ id }}?"
+            },
+            "detail": {
+                "title": "WorkExperience"
+            },
+            "startingDate": "StartingDate",
+            "finishingDate": "FinishingDate",
+            "organization": "Organization",
+            "title": "Title",
+            "location": "Location",
+            "current": "Current",
+            "jobDescription": "JobDescription"
+        }
+    }
+}

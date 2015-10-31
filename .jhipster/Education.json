@@ -1,0 +1,49 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "institutionName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "startingYear",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "finishingYear",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "degree",
+            "fieldType": "DegreeType",
+            "fieldValues": "HighSchool,BachelorDegree,MasterDegree,MBA,PhD,Other"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "degreeOtherDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "fieldOfStudy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "careerName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031004249",
+    "dto": "no",
+    "pagination": "pager"
+}

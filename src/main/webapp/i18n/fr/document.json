@@ -1,0 +1,22 @@
+{
+    "creativehubApp": {
+        "document" : {
+            "home": {
+                "title": "Documents",
+                "createLabel": "Créer un nouveau Document",
+                "createOrEditLabel": "Créer ou éditer un Document"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Document {{ id }} ?"
+            },
+            "detail": {
+                "title": "Document"
+            },
+            "documentType": "DocumentType",
+            "documentNumber": "DocumentNumber",
+            "documentImagePath": "DocumentImagePath",
+            "country": "Country"
+        }
+    }
+}
+

@@ -1,0 +1,25 @@
+{
+    "creativehubApp": {
+        "workExperience" : {
+            "home": {
+                "title": "WorkExperiences",
+                "createLabel": "Créer un nouveau WorkExperience",
+                "createOrEditLabel": "Créer ou éditer un WorkExperience"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le WorkExperience {{ id }} ?"
+            },
+            "detail": {
+                "title": "WorkExperience"
+            },
+            "startingDate": "StartingDate",
+            "finishingDate": "FinishingDate",
+            "organization": "Organization",
+            "title": "Title",
+            "location": "Location",
+            "current": "Current",
+            "jobDescription": "JobDescription"
+        }
+    }
+}
+

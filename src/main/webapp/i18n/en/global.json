@@ -6,6 +6,15 @@
             "home": "Home",
             "entities": {
                 "main": "Entities",
+                "award": "Award",
+                "education": "Education",
+                "workExperience": "WorkExperience",
+                "profileEvent": "ProfileEvent",
+                "country": "Country",
+                "address": "Address",
+                "telephone": "Telephone",
+                "document": "Document",
+                "userType": "UserType",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

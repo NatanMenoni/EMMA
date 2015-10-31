@@ -1,0 +1,38 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "venue",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031010048",
+    "dto": "no",
+    "pagination": "pager"
+}

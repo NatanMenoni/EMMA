@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myAddressLabel" translate="creativehubApp.address.home.createOrEditLabel">Create or edit a Address</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="address.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.province" for="field_province">Province</label>
+            <input type="text" class="form-control" name="province" id="field_province"
+                    ng-model="address.province"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="address.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.street" for="field_street">Street</label>
+            <input type="text" class="form-control" name="street" id="field_street"
+                    ng-model="address.street"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.streetNumber" for="field_streetNumber">StreetNumber</label>
+            <input type="number" class="form-control" name="streetNumber" id="field_streetNumber"
+                    ng-model="address.streetNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.apartment" for="field_apartment">Apartment</label>
+            <input type="text" class="form-control" name="apartment" id="field_apartment"
+                    ng-model="address.apartment"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.address.zipPostalCode" for="field_zipPostalCode">ZipPostalCode</label>
+            <input type="number" class="form-control" name="zipPostalCode" id="field_zipPostalCode"
+                    ng-model="address.zipPostalCode"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="creativehubApp.address.country" for="field_country">country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="address.country" ng-options="country as country.name for country in countrys track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,31 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "documentType",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "documentNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "documentImagePath",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031011319",
+    "dto": "no",
+    "pagination": "pager"
+}

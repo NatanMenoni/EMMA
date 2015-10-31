@@ -1,0 +1,24 @@
+{
+    "creativehubApp": {
+        "profileEvent" : {
+            "home": {
+                "title": "ProfileEvents",
+                "createLabel": "Créer un nouveau ProfileEvent",
+                "createOrEditLabel": "Créer ou éditer un ProfileEvent"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ProfileEvent {{ id }} ?"
+            },
+            "detail": {
+                "title": "ProfileEvent"
+            },
+            "type": "Type",
+            "name": "Name",
+            "date": "Date",
+            "description": "Description",
+            "location": "Location",
+            "venue": "Venue"
+        }
+    }
+}
+

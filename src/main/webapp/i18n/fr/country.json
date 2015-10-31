@@ -1,0 +1,21 @@
+{
+    "creativehubApp": {
+        "country" : {
+            "home": {
+                "title": "Countrys",
+                "createLabel": "Créer un nouveau Country",
+                "createOrEditLabel": "Créer ou éditer un Country"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Country {{ id }} ?"
+            },
+            "detail": {
+                "title": "Country"
+            },
+            "name": "Name",
+            "phoneCode": "PhoneCode",
+            "language": "Language"
+        }
+    }
+}
+

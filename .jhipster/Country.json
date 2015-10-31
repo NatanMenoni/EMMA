@@ -1,0 +1,23 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "phoneCode",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "language",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031010352",
+    "dto": "no",
+    "pagination": "pager"
+}

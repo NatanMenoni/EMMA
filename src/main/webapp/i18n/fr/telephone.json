@@ -1,0 +1,20 @@
+{
+    "creativehubApp": {
+        "telephone" : {
+            "home": {
+                "title": "Telephones",
+                "createLabel": "Créer un nouveau Telephone",
+                "createOrEditLabel": "Créer ou éditer un Telephone"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Telephone {{ id }} ?"
+            },
+            "detail": {
+                "title": "Telephone"
+            },
+            "areaCode": "AreaCode",
+            "number": "Number"
+        }
+    }
+}
+

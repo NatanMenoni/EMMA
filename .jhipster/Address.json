@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "province",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "street",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "streetNumber",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "apartment",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "zipPostalCode",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20151031010749",
+    "dto": "no",
+    "pagination": "pager"
+}

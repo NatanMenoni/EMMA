@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="creativehubApp.address.detail.title">Address</span> {{address.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.province">Province</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.province}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.city">City</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.city}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.street">Street</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.street}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.streetNumber">StreetNumber</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.streetNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.apartment">Apartment</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.apartment}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.zipPostalCode">ZipPostalCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{address.zipPostalCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.address.country">country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:address.country.id})">{{address.country.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

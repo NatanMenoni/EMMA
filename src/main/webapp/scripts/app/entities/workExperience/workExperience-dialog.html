@@ -1,0 +1,68 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myWorkExperienceLabel" translate="creativehubApp.workExperience.home.createOrEditLabel">Create or edit a WorkExperience</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="workExperience.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.startingDate" for="field_startingDate">StartingDate</label>
+            <input type="date" class="form-control" name="startingDate" id="field_startingDate"
+                    ng-model="workExperience.startingDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.finishingDate" for="field_finishingDate">FinishingDate</label>
+            <input type="date" class="form-control" name="finishingDate" id="field_finishingDate"
+                    ng-model="workExperience.finishingDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.organization" for="field_organization">Organization</label>
+            <input type="text" class="form-control" name="organization" id="field_organization"
+                    ng-model="workExperience.organization"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="workExperience.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.location" for="field_location">Location</label>
+            <input type="text" class="form-control" name="location" id="field_location"
+                    ng-model="workExperience.location"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.current" for="field_current">Current</label>
+            <input type="checkbox" class="form-control" name="current" id="field_current"
+                    ng-model="workExperience.current"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.workExperience.jobDescription" for="field_jobDescription">JobDescription</label>
+            <input type="text" class="form-control" name="jobDescription" id="field_jobDescription"
+                    ng-model="workExperience.jobDescription"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

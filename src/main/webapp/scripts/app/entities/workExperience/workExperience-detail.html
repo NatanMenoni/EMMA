@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="creativehubApp.workExperience.detail.title">WorkExperience</span> {{workExperience.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.startingDate">StartingDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.startingDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.finishingDate">FinishingDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.finishingDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.organization">Organization</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.organization}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.title">Title</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.title}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.location">Location</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.location}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.current">Current</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.current}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.workExperience.jobDescription">JobDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{workExperience.jobDescription}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

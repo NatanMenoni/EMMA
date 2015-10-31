@@ -1,0 +1,79 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myEducationLabel" translate="creativehubApp.education.home.createOrEditLabel">Create or edit a Education</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="education.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.institutionName" for="field_institutionName">InstitutionName</label>
+            <input type="text" class="form-control" name="institutionName" id="field_institutionName"
+                    ng-model="education.institutionName"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.startingYear" for="field_startingYear">StartingYear</label>
+            <input type="number" class="form-control" name="startingYear" id="field_startingYear"
+                    ng-model="education.startingYear"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.finishingYear" for="field_finishingYear">FinishingYear</label>
+            <input type="number" class="form-control" name="finishingYear" id="field_finishingYear"
+                    ng-model="education.finishingYear"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.degree" for="field_degree">Degree</label>
+            <select class="form-control" name="degree" ng-model="education.degree" id="field_degree">
+                <option value="HighSchool" translate="creativehubApp.DegreeType.HighSchool">HighSchool</option>
+                <option value="BachelorDegree" translate="creativehubApp.DegreeType.BachelorDegree">BachelorDegree</option>
+                <option value="MasterDegree" translate="creativehubApp.DegreeType.MasterDegree">MasterDegree</option>
+                <option value="MBA" translate="creativehubApp.DegreeType.MBA">MBA</option>
+                <option value="PhD" translate="creativehubApp.DegreeType.PhD">PhD</option>
+                <option value="Other" translate="creativehubApp.DegreeType.Other">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.degreeOtherDescription" for="field_degreeOtherDescription">DegreeOtherDescription</label>
+            <input type="text" class="form-control" name="degreeOtherDescription" id="field_degreeOtherDescription"
+                    ng-model="education.degreeOtherDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.fieldOfStudy" for="field_fieldOfStudy">FieldOfStudy</label>
+            <input type="text" class="form-control" name="fieldOfStudy" id="field_fieldOfStudy"
+                    ng-model="education.fieldOfStudy"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.careerName" for="field_careerName">CareerName</label>
+            <input type="text" class="form-control" name="careerName" id="field_careerName"
+                    ng-model="education.careerName"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.education.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="education.description"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

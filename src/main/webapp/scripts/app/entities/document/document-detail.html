@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="creativehubApp.document.detail.title">Document</span> {{document.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.document.documentType">DocumentType</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{document.documentType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.document.documentNumber">DocumentNumber</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{document.documentNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.document.documentImagePath">DocumentImagePath</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{document.documentImagePath}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="creativehubApp.document.country">country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:document.country.id})">{{document.country.name}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

@@ -1,0 +1,19 @@
+{
+    "creativehubApp": {
+        "userType" : {
+            "home": {
+                "title": "UserTypes",
+                "createLabel": "Créer un nouveau UserType",
+                "createOrEditLabel": "Créer ou éditer un UserType"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le UserType {{ id }} ?"
+            },
+            "detail": {
+                "title": "UserType"
+            },
+            "name": "Name"
+        }
+    }
+}
+

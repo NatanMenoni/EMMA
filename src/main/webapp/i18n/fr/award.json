@@ -1,0 +1,22 @@
+{
+    "creativehubApp": {
+        "award" : {
+            "home": {
+                "title": "Awards",
+                "createLabel": "Créer un nouveau Award",
+                "createOrEditLabel": "Créer ou éditer un Award"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Award {{ id }} ?"
+            },
+            "detail": {
+                "title": "Award"
+            },
+            "year": "Year",
+            "name": "Name",
+            "issuer": "Issuer",
+            "description": "Description"
+        }
+    }
+}
+

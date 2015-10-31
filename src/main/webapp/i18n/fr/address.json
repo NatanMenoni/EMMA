@@ -1,0 +1,25 @@
+{
+    "creativehubApp": {
+        "address" : {
+            "home": {
+                "title": "Addresss",
+                "createLabel": "Créer un nouveau Address",
+                "createOrEditLabel": "Créer ou éditer un Address"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Address {{ id }} ?"
+            },
+            "detail": {
+                "title": "Address"
+            },
+            "province": "Province",
+            "city": "City",
+            "street": "Street",
+            "streetNumber": "StreetNumber",
+            "apartment": "Apartment",
+            "zipPostalCode": "ZipPostalCode",
+            "country": "Country"
+        }
+    }
+}
+

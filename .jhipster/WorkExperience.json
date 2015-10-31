@@ -1,0 +1,43 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "startingDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "finishingDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "organization",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "current",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "jobDescription",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151031004857",
+    "dto": "no",
+    "pagination": "pager"
+}
