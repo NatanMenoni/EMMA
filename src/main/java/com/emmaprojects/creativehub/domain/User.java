@@ -1,5 +1,6 @@
 package com.emmaprojects.creativehub.domain;
 
+import com.emmaprojects.creativehub.domain.enumeration.CreativeGeneralArea;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Email;
 
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 import java.time.ZonedDateTime;
@@ -74,11 +76,25 @@ public class User extends AbstractAuditingEntity implements Serializable {
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
     private Set<Authority> authorities = new HashSet<>();
-/*
+
+    @Column(name = "birth_date", nullable = true)
+    private LocalDate birthDate;
+
+    @Column(name = "last_login", nullable = true)
+    private LocalDate lastLogin;
+
+    @Column(name = "cancellation_date", nullable = true)
+    private LocalDate cancellationDate;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "creative_general_area")
+    private CreativeGeneralArea creativeGeneralArea;
+
+
     @OneToOne(mappedBy = "user")
     @JsonIgnore
     private Profile profile;
-*/
+
     public Long getId() {
         return id;
     }
@@ -175,14 +191,46 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.authorities = authorities;
     }
 
-    /*public Profile getProfile() {
+    public Profile getProfile() {
         return profile;
     }
 
     public void setProfile(Profile profile) {
         this.profile = profile;
     }
-*/
+
+    public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public LocalDate getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(LocalDate lastLogin) {
+        this.lastLogin = lastLogin;
+    }
+
+    public LocalDate getCancellationDate() {
+        return cancellationDate;
+    }
+
+    public void setCancellationDate(LocalDate cancellationDate) {
+        this.cancellationDate = cancellationDate;
+    }
+
+    public CreativeGeneralArea getCreativeGeneralArea() {
+        return creativeGeneralArea;
+    }
+
+    public void setCreativeGeneralArea(CreativeGeneralArea creativeGeneralArea) {
+        this.creativeGeneralArea = creativeGeneralArea;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

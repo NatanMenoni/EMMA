@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+   <changeSet author="Natan (generated)" id="1446337371214-1">
+      <addColumn tableName="jhi_user">
+         <column name="birth_date" type="date"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446337371214-2">
+      <addColumn tableName="jhi_user">
+         <column name="cancellation_date" type="date"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446337371214-3">
+      <addColumn tableName="jhi_user">
+         <column name="creative_general_area" type="varchar(255)"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446337371214-4">
+      <addColumn tableName="jhi_user">
+         <column name="last_login" type="date"/>
+      </addColumn>
+   </changeSet>
+</databaseChangeLog>

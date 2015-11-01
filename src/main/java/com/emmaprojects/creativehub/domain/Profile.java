@@ -41,7 +41,7 @@ public class Profile implements Serializable {
     @JsonIgnore
     private Set<WorkCollection> workCollections = new HashSet<>();
 
-    @OneToOne()
+    @OneToOne
     @JsonIgnore
     private User user;
 
