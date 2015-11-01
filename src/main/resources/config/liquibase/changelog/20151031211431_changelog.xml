@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+   <changeSet author="Natan (generated)" id="1446333280824-1">
+      <createTable tableName="work_piece_category">
+         <column name="workPieces_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="categories_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-2">
+      <createTable tableName="work_piece_work_collection">
+         <column name="workPieces_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="workCollections_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-3">
+      <addColumn tableName="award">
+         <column name="profile_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-4">
+      <addColumn tableName="education">
+         <column name="profile_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-5">
+      <addColumn tableName="profile_event">
+         <column name="profile_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-6">
+      <addColumn tableName="work_collection">
+         <column name="profile_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-7">
+      <addColumn tableName="work_experience">
+         <column name="profile_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-8">
+      <addColumn tableName="profile">
+         <column name="user_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-9">
+      <addPrimaryKey columnNames="workPieces_id, categories_id"
+                     tableName="work_piece_category"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-10">
+      <addPrimaryKey columnNames="workPieces_id, workCollections_id"
+                     tableName="work_piece_work_collection"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-11">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="award"
+                               constraintName="FK_4jaccjsfmu04s1lb09vpq2v6o"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-12">
+      <addForeignKeyConstraint baseColumnNames="workPieces_id"
+                               baseTableName="work_piece_work_collection"
+                               constraintName="FK_8u8bmu87corafieaucey6lxts"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="work_piece"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-13">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="work_experience"
+                               constraintName="FK_bdvwd1xvbvg0n905fgxmsxlvw"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-14">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="profile"
+                               constraintName="FK_c1dkiawnlj6uoe6fnlwd6j83j"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-15">
+      <addForeignKeyConstraint baseColumnNames="workCollections_id"
+                               baseTableName="work_piece_work_collection"
+                               constraintName="FK_dr501glnewadxm7wcqj6mckoi"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="work_collection"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-16">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="profile_event"
+                               constraintName="FK_en93ujo5p2jdsd2d6vj7a9b51"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-17">
+      <addForeignKeyConstraint baseColumnNames="categories_id"
+                               baseTableName="work_piece_category"
+                               constraintName="FK_guk8d6ay3lde1qumhpf6rc7lb"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="category"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-18">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="education"
+                               constraintName="FK_hfiae06sa196of51f3mknrquc"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-19">
+      <addForeignKeyConstraint baseColumnNames="workPieces_id"
+                               baseTableName="work_piece_category"
+                               constraintName="FK_jbxoqjurvveachtsb7wdfnxe7"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="work_piece"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446333280824-20">
+      <addForeignKeyConstraint baseColumnNames="profile_id"
+                               baseTableName="work_collection"
+                               constraintName="FK_muvie7tt232oiferg6j7ygegg"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="profile"/>
+   </changeSet>
+</databaseChangeLog>
