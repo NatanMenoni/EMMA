@@ -1,0 +1,34 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "width",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "height",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "depth",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "commercialState",
+            "fieldType": "CommercialState",
+            "fieldValues": "ExhibitionOnly,ForSale,Sold"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "price",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20151102135940",
+    "dto": "no",
+    "pagination": "pager"
+}

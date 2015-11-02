@@ -18,7 +18,7 @@ public class WorkPiece implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    protected Long id;
 
     @Column(name = "description")
     private String description;

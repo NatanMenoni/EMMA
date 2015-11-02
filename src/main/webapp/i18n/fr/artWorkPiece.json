@@ -1,0 +1,23 @@
+{
+    "creativehubApp": {
+        "artWorkPiece" : {
+            "home": {
+                "title": "ArtWorkPieces",
+                "createLabel": "Créer un nouveau ArtWorkPiece",
+                "createOrEditLabel": "Créer ou éditer un ArtWorkPiece"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le ArtWorkPiece {{ id }} ?"
+            },
+            "detail": {
+                "title": "ArtWorkPiece"
+            },
+            "width": "Width",
+            "height": "Height",
+            "depth": "Depth",
+            "commercialState": "CommercialState",
+            "price": "Price"
+        }
+    }
+}
+

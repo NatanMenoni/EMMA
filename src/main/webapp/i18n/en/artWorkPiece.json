@@ -1,0 +1,25 @@
+{
+    "creativehubApp": {
+        "artWorkPiece" : {
+            "home": {
+                "title": "ArtWorkPieces",
+                "createLabel": "Create a new ArtWorkPiece",
+                "createOrEditLabel": "Create or edit a ArtWorkPiece"
+            },
+            "created": "A new ArtWorkPiece is created with identifier {{ param }}",
+            "updated": "A ArtWorkPiece is updated with identifier {{ param }}",
+            "deleted": "A ArtWorkPiece is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete ArtWorkPiece {{ id }}?"
+            },
+            "detail": {
+                "title": "ArtWorkPiece"
+            },
+            "width": "Width",
+            "height": "Height",
+            "depth": "Depth",
+            "commercialState": "CommercialState",
+            "price": "Price"
+        }
+    }
+}

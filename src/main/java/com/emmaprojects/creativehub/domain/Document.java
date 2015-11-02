@@ -30,6 +30,9 @@ public class Document implements Serializable {
     @ManyToOne
     private Country country;
 
+    @OneToOne
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -68,6 +71,14 @@ public class Document implements Serializable {
 
     public void setCountry(Country country) {
         this.country = country;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

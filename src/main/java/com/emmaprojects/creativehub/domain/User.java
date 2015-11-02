@@ -90,10 +90,21 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(name = "creative_general_area")
     private CreativeGeneralArea creativeGeneralArea;
 
-
     @OneToOne(mappedBy = "user")
     @JsonIgnore
     private Profile profile;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Address> addresses = new HashSet<>();
+
+    @ManyToOne
+    private Country country;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private Set<Telephone> telephones = new HashSet<>();
+
+    @OneToOne(mappedBy = "user")
+    private Document document;
 
     public Long getId() {
         return id;
@@ -229,6 +240,38 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     public void setCreativeGeneralArea(CreativeGeneralArea creativeGeneralArea) {
         this.creativeGeneralArea = creativeGeneralArea;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
+
+    public Set<Telephone> getTelephones() {
+        return telephones;
+    }
+
+    public void setTelephones(Set<Telephone> telephones) {
+        this.telephones = telephones;
+    }
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        this.document = document;
     }
 
     @Override

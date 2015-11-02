@@ -1,0 +1,58 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myArtWorkPieceLabel" translate="creativehubApp.artWorkPiece.home.createOrEditLabel">Create or edit a ArtWorkPiece</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="artWorkPiece.id" readonly />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.artWorkPiece.width" for="field_width">Width</label>
+            <input type="number" class="form-control" name="width" id="field_width"
+                    ng-model="artWorkPiece.width"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.artWorkPiece.height" for="field_height">Height</label>
+            <input type="number" class="form-control" name="height" id="field_height"
+                    ng-model="artWorkPiece.height"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.artWorkPiece.depth" for="field_depth">Depth</label>
+            <input type="number" class="form-control" name="depth" id="field_depth"
+                    ng-model="artWorkPiece.depth"
+                     />
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.artWorkPiece.commercialState" for="field_commercialState">CommercialState</label>
+            <select class="form-control" name="commercialState" ng-model="artWorkPiece.commercialState" id="field_commercialState">
+                <option value="ExhibitionOnly" translate="creativehubApp.CommercialState.ExhibitionOnly">ExhibitionOnly</option>
+                <option value="ForSale" translate="creativehubApp.CommercialState.ForSale">ForSale</option>
+                <option value="Sold" translate="creativehubApp.CommercialState.Sold">Sold</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="creativehubApp.artWorkPiece.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="artWorkPiece.price"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,10 @@
+{
+    "creativehubApp": {
+        "CommercialState" : {
+            "null": "",
+            "ExhibitionOnly": "ExhibitionOnly",
+            "ForSale": "ForSale",
+            "Sold": "Sold"
+        }
+    }
+}

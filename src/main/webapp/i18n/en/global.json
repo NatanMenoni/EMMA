@@ -20,6 +20,7 @@
                 "workPiece": "WorkPiece",
                 "workCollection": "WorkCollection",
                 "profile": "Profile",
+                "artWorkPiece": "ArtWorkPiece",
                 "additionalEntity": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

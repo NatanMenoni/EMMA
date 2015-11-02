@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+   <changeSet author="Natan (generated)" id="1446470189906-1">
+      <createTable tableName="jhi_user_address">
+         <column name="jhi_user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="addresses_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-2">
+      <createTable tableName="jhi_user_telephone">
+         <column name="jhi_user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="telephones_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-3">
+      <addColumn tableName="jhi_user">
+         <column name="country_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-4">
+      <addColumn tableName="address">
+         <column name="user_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-5">
+      <addColumn tableName="document">
+         <column name="user_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-6">
+      <addColumn tableName="telephone">
+         <column name="user_id" type="bigint"/>
+      </addColumn>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-7">
+      <addPrimaryKey columnNames="jhi_user_id, addresses_id" tableName="jhi_user_address"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-8">
+      <addPrimaryKey columnNames="jhi_user_id, telephones_id" tableName="jhi_user_telephone"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-9">
+      <addUniqueConstraint columnNames="addresses_id"
+                           deferrable="false"
+                           disabled="false"
+                           initiallyDeferred="false"
+                           tableName="jhi_user_address"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-10">
+      <addUniqueConstraint columnNames="telephones_id"
+                           deferrable="false"
+                           disabled="false"
+                           initiallyDeferred="false"
+                           tableName="jhi_user_telephone"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-11">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="address"
+                               constraintName="FK_7rod8a71yep5vxasb0ms3osbg"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-12">
+      <addForeignKeyConstraint baseColumnNames="telephones_id"
+                               baseTableName="jhi_user_telephone"
+                               constraintName="FK_aw7jtnquxsk80l7pa6gr1ahfp"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="telephone"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-13">
+      <addForeignKeyConstraint baseColumnNames="jhi_user_id"
+                               baseTableName="jhi_user_address"
+                               constraintName="FK_e624jf578591enepuke134ftu"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-14">
+      <addForeignKeyConstraint baseColumnNames="jhi_user_id"
+                               baseTableName="jhi_user_telephone"
+                               constraintName="FK_ejehnnu267bbvv4uow213hrgh"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-15">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="document"
+                               constraintName="FK_esb799ihho7ek44mndbsvmyit"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-16">
+      <addForeignKeyConstraint baseColumnNames="addresses_id"
+                               baseTableName="jhi_user_address"
+                               constraintName="FK_hw7fuo14kuklj00kxst9dvmkk"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="address"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-17">
+      <addForeignKeyConstraint baseColumnNames="country_id"
+                               baseTableName="jhi_user"
+                               constraintName="FK_kw5b56m8legjawfkfuh2l88h3"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="country"/>
+   </changeSet>
+   <changeSet author="Natan (generated)" id="1446470189906-18">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="telephone"
+                               constraintName="FK_tg2q67ddlxv06pljynn7bs99d"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+</databaseChangeLog>

@@ -22,6 +22,9 @@ public class Telephone implements Serializable {
     @Column(name = "number")
     private Integer number;
 
+    @ManyToOne
+    private User user;
+
     public Long getId() {
         return id;
     }
@@ -46,6 +49,13 @@ public class Telephone implements Serializable {
         this.number = number;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) {
