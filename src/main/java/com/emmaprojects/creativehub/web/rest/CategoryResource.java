@@ -1,6 +1,7 @@
 package com.emmaprojects.creativehub.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.emmaprojects.creativehub.constants.Constants;
 import com.emmaprojects.creativehub.domain.Category;
 import com.emmaprojects.creativehub.repository.CategoryRepository;
 import com.emmaprojects.creativehub.web.rest.util.HeaderUtil;
@@ -20,6 +21,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * REST controller for managing Category.
@@ -110,5 +112,45 @@ public class CategoryResource {
         log.debug("REST request to delete Category : {}", id);
         categoryRepository.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("category", id.toString())).build();
+    }
+
+    /**
+     * GET  /categories/artwork -> obtener categorias hijas de Artwork.
+     */
+    @RequestMapping(value = "/categories/artwork",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Set<Category>> getArtworkCategories() {
+        log.debug("REST request to get Artwork Categories");
+        Optional<Category> cat = Optional.ofNullable(categoryRepository.findOneWithEagerRelationships(Constants.ARTWORK_CATEGORY_ID));
+            /*.map(category -> new ResponseEntity<>(
+                category,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));*/
+        if(cat.isPresent() && cat.get().getSubCategories().size() > 1) {
+            Set<Category> categories = cat.map(c -> c.getSubCategories()).get();
+            return new ResponseEntity<Set<Category>>(categories,HttpStatus.OK);
+        }else{
+            return new ResponseEntity<Set<Category>>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /**
+     * GET  /categories/artwork -> obtener categorias hijas de Professional.
+     */
+    @RequestMapping(value = "/categories/professional",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Set<Category>> getProfessionalCategories() {
+        log.debug("REST request to get Professional Categories");
+        Optional<Category> cat = Optional.ofNullable(categoryRepository.findOneWithEagerRelationships(Constants.PROFESSIONAL_CATEGORY_ID));
+        if(cat.isPresent() && cat.get().getSubCategories().size() > 1) {
+            Set<Category> categories = cat.map(c -> c.getSubCategories()).get();
+            return new ResponseEntity<Set<Category>>(categories,HttpStatus.OK);
+        }else{
+            return new ResponseEntity<Set<Category>>(HttpStatus.NOT_FOUND);
+        }
     }
 }

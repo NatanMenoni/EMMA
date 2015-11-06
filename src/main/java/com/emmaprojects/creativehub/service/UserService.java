@@ -152,7 +152,7 @@ public class UserService {
      * This is scheduled to get fired everyday, at 01:00 (am).
      * </p>
      */
-    @Scheduled(cron = "0 0 1 * * ?")
+    /*@Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {
         ZonedDateTime now = ZonedDateTime.now();
         List<User> users = userRepository.findAllByActivatedIsFalseAndCreatedDateBefore(now.minusDays(3));
@@ -160,5 +160,5 @@ public class UserService {
             log.debug("Deleting not activated user {}", user.getLogin());
             userRepository.delete(user);
         }
-    }
+    }*/
 }
