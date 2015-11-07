@@ -1,0 +1,28 @@
+{
+    "creativehubApp": {
+        "education" : {
+            "home": {
+                "title": "Educaciones",
+                "createLabel": "Crear una nueva Educación",
+                "createOrEditLabel": "Crear o editar Educación"
+            },
+            "created": "Se creó una nueva Educación con identificador {{ param }}",
+            "updated": "Se actualizó la Educación con identificador {{ param }}",
+            "deleted": "Se eliminó la Educación con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar la Educación {{ id }}?"
+            },
+            "detail": {
+                "title": "Educación"
+            },
+            "institutionName": "Institución",
+            "startingYear": "Año de Inicio",
+            "finishingYear": "Año de Finalización",
+            "degree": "Grado",
+            "degreeOtherDescription": "Otro",
+            "fieldOfStudy": "Área de Conocimiento",
+            "careerName": "Nombre de la Carrera",
+            "description": "Descripción"
+        }
+    }
+}

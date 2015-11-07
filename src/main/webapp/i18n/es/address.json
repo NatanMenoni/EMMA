@@ -1,0 +1,27 @@
+{
+    "creativehubApp": {
+        "address" : {
+            "home": {
+                "title": "Domicilios",
+                "createLabel": "Crear nuevo Domicilio",
+                "createOrEditLabel": "Crear o editar Domicilio"
+            },
+            "created": "Un nuevo Domicilio fue creado con identificador {{ param }}",
+            "updated": "Un Domicilio fue actualizado con identificador {{ param }}",
+            "deleted": "Un Domicilio fue eliminado con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Domicilio {{ id }}?"
+            },
+            "detail": {
+                "title": "Domicilio"
+            },
+            "province": "Provincia",
+            "city": "Ciudad",
+            "street": "Calle",
+            "streetNumber": "Número",
+            "apartment": "Apartmento",
+            "zipPostalCode": "Código Postal",
+            "country": "País"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "creativehubApp": {
+        "workExperience" : {
+            "home": {
+                "title": "Experiencia Laboral",
+                "createLabel": "Crear Experiencia Laboral",
+                "createOrEditLabel": "Crear o editar Experiencia Laboral"
+            },
+            "created": "Se creó Experiencia Laboral con identificador {{ param }}",
+            "updated": "Se actualizó la Experiencia Laboral con identificador {{ param }}",
+            "deleted": "Se eliminó la Experiencia Laboral con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar la Experiencia Laboral {{ id }}?"
+            },
+            "detail": {
+                "title": "Experiencia Laboral"
+            },
+            "startingDate": "Fecha de Inicio",
+            "finishingDate": "Fecha de Finalización",
+            "organization": "Organización",
+            "title": "Puesto",
+            "location": "Ubicación",
+            "current": "Actual",
+            "jobDescription": "Descripción"
+        }
+    }
+}

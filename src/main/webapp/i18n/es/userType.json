@@ -1,0 +1,21 @@
+{
+    "creativehubApp": {
+        "userType" : {
+            "home": {
+                "title": "Tipo de Usuario",
+                "createLabel": "Crear un nuevo Tipo de Usuario",
+                "createOrEditLabel": "Crear o editar un Tipo de Usuario"
+            },
+            "created": "Se creó un nuevo Tipo de Usuario con identificador {{ param }}",
+            "updated": "Se actualizó el Tipo de Usuario con identificador {{ param }}",
+            "deleted": "Se eliminó el Tipo de Usuario con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Tipo de Usuario {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo de Usuario"
+            },
+            "name": "Nombre"
+        }
+    }
+}

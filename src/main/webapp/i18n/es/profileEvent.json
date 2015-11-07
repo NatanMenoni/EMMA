@@ -1,0 +1,26 @@
+{
+    "creativehubApp": {
+        "profileEvent" : {
+            "home": {
+                "title": "Eventos del Perfil",
+                "createLabel": "Crear un nuevo Evento",
+                "createOrEditLabel": "Crear o editar un Evento"
+            },
+            "created": "Se creó un nuevo Evento con identificador {{ param }}",
+            "updated": "Se actualizó el Evento con identificador {{ param }}",
+            "deleted": "Se eliminó el Evento con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Evento {{ id }}?"
+            },
+            "detail": {
+                "title": "Evento del Perfil"
+            },
+            "type": "Tipo de Evento",
+            "name": "Nombre",
+            "date": "Fecha",
+            "description": "Descripción",
+            "location": "Localidad",
+            "venue": "Lugar"
+        }
+    }
+}

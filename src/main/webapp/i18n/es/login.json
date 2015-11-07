@@ -1,0 +1,19 @@
+{
+    "login": {
+        "title": "Ingresar",
+        "form": {
+            "password": "Contraseña",
+            "password.placeholder": "contraseña",
+            "rememberme": "Recordarme",
+            "button": "Ingresar"
+        },
+        "messages": {
+            "error": {
+                "authentication": "<strong>El ingreso falló!</strong> Por favor revise sus credenciales e inténtelo de nuevo."
+            }
+        },
+        "password" : {
+            "forgot": "Se olvidó su contraseña?"
+        }
+    }
+}

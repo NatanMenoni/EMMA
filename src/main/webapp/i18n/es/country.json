@@ -1,0 +1,23 @@
+{
+    "creativehubApp": {
+        "country" : {
+            "home": {
+                "title": "Países",
+                "createLabel": "Crear un nuevo País",
+                "createOrEditLabel": "Crear o editar un País"
+            },
+            "created": "Se creó un nuevo País con identificador {{ param }}",
+            "updated": "Se actualizó el País con identificador {{ param }}",
+            "deleted": "Se eliminó el País con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el País {{ id }}?"
+            },
+            "detail": {
+                "title": "País"
+            },
+            "name": "Nombre",
+            "phoneCode": "Código Telefónico",
+            "language": "Idioma"
+        }
+    }
+}

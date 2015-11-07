@@ -1,0 +1,15 @@
+{
+    "sessions": {
+        "title": "Sesiones activas de [<b>{{username}}</b>]",
+        "table": {
+            "ipaddress": "Dirección IP",
+            "useragent": "Agente d eUsuario",
+            "date": "Fecha",
+            "button": "Cerrar"
+        },
+        "messages": {
+            "success": "<strong>Sesión cerrada!</strong>",
+            "error": "<strong>Ocurrió un error!</strong> No se pudo cerrar la sesión."
+        }
+    }
+}

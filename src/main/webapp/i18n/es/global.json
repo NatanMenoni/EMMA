@@ -1,0 +1,127 @@
+{
+    "global": {
+        "title": "creativehub",
+        "browsehappy": "Usted está utilizando un navegador <strong>anticuado</strong>. Por favor <a href=\"http://browsehappy.com/?locale=en\">actualice su navegador</a> para mejorar su experiencia.",
+        "menu": {
+            "home": "Inicio",
+            "entities": {
+                "main": "Entidades",
+                "award": "Premio",
+                "education": "Educación",
+                "workExperience": "Experiencia Laboral",
+                "profileEvent": "Evento del Perfil",
+                "country": "País",
+                "address": "Domicilio",
+                "telephone": "Teléfono",
+                "document": "Documento",
+                "userType": "Tipo de Usuario",
+                "tag": "Tag",
+                "category": "Categoría",
+                "workPiece": "Trabajo",
+                "workCollection": "Colección",
+                "profile": "Perfil",
+                "artWorkPiece": "Trabajo Artístico",
+                "additionalEntity": "JHipster will add additional entities here (do not translate!)"
+            },
+            "account": {
+                "main": "Cuenta",
+                "settings": "Configuración",
+                "password": "Contraseña",
+                "sessions": "Sesiones",
+                "login": "Ingresar",
+                "logout": "Salir",
+                "register": "Registrarse"
+            },
+            "admin": {
+                "main": "Administration",
+                "user-management": "User management",
+                "tracker": "User tracker",
+                "metrics": "Metrics",
+                "health": "Health",
+                "configuration": "Configuration",
+                "logs": "Logs",
+                "audits": "Audits",
+                "apidocs": "API",
+                "database": "Database"
+            },
+            "language": "Idioma"
+        },
+        "form": {
+            "username": "Nombre de usuario",
+            "username.placeholder": "nombre de usuario",
+            "newpassword": "Contraseña",
+            "newpassword.placeholder": "contraseña",
+            "confirmpassword": "Confirmación de Contraseña",
+            "confirmpassword.placeholder": "contraseña",
+            "email": "E-mail",
+            "email.placeholder": "e-mail"
+        },
+        "messages": {
+            "info": {
+                "authenticated": "If you want to <a class=\"alert-link\" href=\"#/login\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
+                "register": "Aún no tiene cuenta? <a class=\"alert-link\" href=\"#/register\">Regístrese</a>"
+            },
+            "error": {
+                "dontmatch": "La contraseña difiere de la confirmación!"
+            },
+            "validate": {
+                "newpassword": {
+                    "required": "Ingrese su contraseña.",
+                    "minlength": "Su contraseña debe tener al menos 5 caracteres.",
+                    "maxlength": "Su contraseña no puede tener más de 50 caracteres.",
+                    "strength": "Seguridad de la contraseña:"
+                },
+                "confirmpassword": {
+                    "required": "Ingrese la confirmación de la contraseña.",
+                    "minlength": "La confirmación de la contraseña debe tener al menos 5 caracteres.",
+                    "maxlength": "La confirmación de la contraseña no puede tener más de 50 caracteres."
+                },
+                "email": {
+                    "required": "Ingrese su e-mail.",
+                    "invalid": "E-mail inválido.",
+                    "minlength": "Su e-mail debe tener al menos 5 caracteres.",
+                    "maxlength": "Su e-mail no puede tener más de 50 caracteres."
+                }
+            }
+        },
+        "field": {
+            "id": "ID"
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Agregar blob",
+            "addimage": "Agregar imagen",
+            "back": "Atrás",
+            "cancel": "Cancelar",
+            "delete": "Borrar",
+            "edit": "Editar",
+            "save": "Guardar",
+            "view": "Ver"
+        },
+        "detail": {
+            "field": "Campo",
+            "value": "Valor"
+        },
+        "delete": {
+            "title": "Confirme eliminación"
+        },
+        "validation": {
+            "required": "Este campo es requerido.",
+            "minlength": "Este campo debe tener al menos {{min}} caracteres.",
+            "maxlength": "Este campo no puede tener más de {{max}} caracteres.",
+            "min": "Este campo debería ser mayor a {{min}}.",
+            "max": "Este campo debería ser menor a {{max}}.",
+            "minbytes": "Este campo debería tener al menos {{min}} bytes.",
+            "maxbytes": "Este campo no puede tener más de {{max}} bytes.",
+            "pattern": "Este campo debería seguir el patrón: {{pattern}}.",
+            "number": "Este campo debería ser un número.",
+            "datetimelocal": "Este campo debería ser fecha y hora."
+        }
+    },
+    "error": {
+        "serverNotReachable": "No se puede contactar al servidor",
+        "NotNull": "Campo {{fieldName}} no puede ser vacío!"
+    },
+    "footer": "Este es el pie Neymar"
+}

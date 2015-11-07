@@ -1,0 +1,21 @@
+{
+    "creativehubApp": {
+        "tag" : {
+            "home": {
+                "title": "Tags",
+                "createLabel": "Crear Tag",
+                "createOrEditLabel": "Crear o editar Tag"
+            },
+            "created": "Se creó un nuevo Tag con identificador {{ param }}",
+            "updated": "Se actualizó el Tag con identificador {{ param }}",
+            "deleted": "Se eliminó el Tag con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Tag {{ id }}?"
+            },
+            "detail": {
+                "title": "Tag"
+            },
+            "name": "Nombre"
+        }
+    }
+}

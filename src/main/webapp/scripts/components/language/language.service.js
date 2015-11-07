@@ -27,7 +27,7 @@ angular.module('creativehubApp')
  They are written in English to avoid character encoding issues (not a perfect solution)
  */
     .constant('LANGUAGES', [
-        'en', 'fr'
+        'en', 'fr', 'es'
         //JHipster will add new languages here
     ]
 );

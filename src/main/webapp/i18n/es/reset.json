@@ -1,0 +1,30 @@
+{
+    "reset": {
+        "request": {
+            "title": "Restaurar Contraseña",
+            "form": {
+                "button": "Restaurar contraseña"
+            },
+            "messages": {
+                "info": "Ingrese el e-mail que utilizó para registrarse",
+                "success": "Revise su casilla de correo para continuar con la restauración de la contraseña.",
+                "notfound": "<strong>El e-mail no está registrado!</strong> Por favor revise e intente nuevamente."
+
+            }
+
+        },
+        "finish" : {
+            "title": "Restaurar contraseña",
+            "form": {
+                "button": "Validar nueva contraseña"
+            },
+            "messages": {
+                "info": "Elija una nueva contrasñea",
+                "success": "<strong>Su contraseña ha sido restaurada.</strong> Por favor <a class=\"alert-link\" href=\"#/login\">ingrese</a>.",
+                "keymissing": "No se encuentra la llave de restauración.",
+                "error": "Su contraseña no ha podido ser restaurada. Recuerde que un pedido de restauración es válido por 24 horas."
+            }
+        }
+    }
+
+}

@@ -1,0 +1,26 @@
+{
+    "creativehubApp": {
+        "category" : {
+            "home": {
+                "title": "Categorías",
+                "createLabel": "Crear una nueva Categoría",
+                "createOrEditLabel": "Crear o editar Categoría"
+            },
+            "created": "Se creó una nueva Categoría con identificador {{ param }}",
+            "updated": "Se actualizó la Categoría con identificador {{ param }}",
+            "deleted": "Se eliminó la Categoría con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar la Categoría {{ id }}?"
+            },
+            "detail": {
+                "title": "Categoría"
+            },
+            "name": "Nombre",
+            "description": "Descripción",
+            "level": "Nivel",
+            "imagePath": "Imagen",
+            "subCategories": "SubCategorías",
+            "workPieces": "Trabajos"
+        }
+    }
+}

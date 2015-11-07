@@ -1,0 +1,24 @@
+{
+    "creativehubApp": {
+        "award" : {
+            "home": {
+                "title": "Premios",
+                "createLabel": "Crear nuevo Premio",
+                "createOrEditLabel": "Crear o editar un Premio"
+            },
+            "created": "Se creó un nuevo Premio con identificador {{ param }}",
+            "updated": "Se actualizó el Premio con identificador {{ param }}",
+            "deleted": "Se eliminó el Premio con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Premio {{ id }}?"
+            },
+            "detail": {
+                "title": "Premio"
+            },
+            "year": "Año",
+            "name": "Nombre",
+            "issuer": "Emisor",
+            "description": "Descripción"
+        }
+    }
+}

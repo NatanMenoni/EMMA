@@ -1,0 +1,24 @@
+{
+    "creativehubApp": {
+        "workCollection" : {
+            "home": {
+                "title": "Colleciones",
+                "createLabel": "Crear una nueva Colección",
+                "createOrEditLabel": "Crear o editar Colección"
+            },
+            "created": "Se creó una nueva Colección con identificador {{ param }}",
+            "updated": "Se actualizó la Colección con identificador {{ param }}",
+            "deleted": "Se eliminó la Colección con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar la Colección {{ id }}?"
+            },
+            "detail": {
+                "title": "Colección"
+            },
+            "description": "Descripción",
+            "date": "Fecha",
+            "coverImagePath": "Foto",
+            "workPiece": "Trabajos"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "creativehubApp": {
+        "workPiece" : {
+            "home": {
+                "title": "Trabajos",
+                "createLabel": "Crear nuevo Trabajo",
+                "createOrEditLabel": "Crear o editar Trabajo"
+            },
+            "created": "Se creó un nuevo Trabajo con identificador {{ param }}",
+            "updated": "Se actualizó el Trabajo con identificador {{ param }}",
+            "deleted": "Se eliminó el Trabajo con identificador {{ param }}",
+            "delete": {
+                "question": "Está seguro que desea eliminar el Trabajo {{ id }}?"
+            },
+            "detail": {
+                "title": "Trabajo"
+            },
+            "description": "Descripción",
+            "imagePath": "Foto",
+            "yearOfCreation": "Año de creación",
+            "inputDate": "InputDate",
+            "workCollection": "Colección",
+            "tags": "Tags",
+            "user": "Usuario",
+            "categorie": "Categoría"
+        }
+    }
+}
