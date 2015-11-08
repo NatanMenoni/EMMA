@@ -5,7 +5,6 @@ import com.emmaprojects.creativehub.domain.User;
 import com.emmaprojects.creativehub.repository.UserRepository;
 import java.time.ZonedDateTime;
 import com.emmaprojects.creativehub.service.util.RandomUtil;
-import java.time.LocalDate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.IntegrationTest;
@@ -16,7 +15,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 import javax.inject.Inject;
 import java.util.Optional;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 

@@ -17,6 +17,26 @@ public final class SecurityUtils {
     private SecurityUtils() {
     }
 
+
+    /**
+     * Get the login of the current user.
+     */
+    public static String getCurrentLogin() {
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        Authentication authentication = securityContext.getAuthentication();
+        UserDetails springSecurityUser = null;
+        String userName = null;
+        if(authentication != null) {
+            if (authentication.getPrincipal() instanceof UserDetails) {
+                springSecurityUser = (UserDetails) authentication.getPrincipal();
+                userName = springSecurityUser.getUsername();
+            } else if (authentication.getPrincipal() instanceof String) {
+                userName = (String) authentication.getPrincipal();
+            }
+        }
+        return userName;
+    }
+
     /**
      * Get the login of the current user.
      */
@@ -55,7 +75,7 @@ public final class SecurityUtils {
 
     /**
      * Return the current user id, or throws an exception, if the user is not authenticated yet.
-     * 
+     *
      * @return the current user id
      */
     public static Long getCurrentUserId() {
@@ -65,7 +85,7 @@ public final class SecurityUtils {
     /**
      * Return the current user, or throws an exception, if the user is not
      * authenticated yet.
-     * 
+     *
      * @return the current user
      */
     public static CustomUserDetails getCurrentUser() {
