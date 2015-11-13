@@ -44,7 +44,10 @@
                 "apidocs": "API",
                 "database": "Database"
             },
-            "language": "Language"
+            "language": "Language",
+            "artworks": "Artwork",
+            "professionals": "Professionals",
+            "searchPlaceholder": "Search"
         },
         "form": {
             "username": "Username",

@@ -21,6 +21,18 @@
             "imagePath": "ImagePath",
             "subCategories": "SubCategories",
             "workPieces": "WorkPieces"
+        },
+        "categories" : {
+            "artworks": {
+                "painting": "Painting",
+                "sculpture": "Sculpture",
+                "drawing": "Drawing"
+            },
+            "professionals": {
+                "graphicDesign": "Graphic Design",
+                "architecture": "Architecture",
+                "webDesign": "Web Design"
+            }
         }
     }
 }

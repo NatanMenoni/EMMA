@@ -5,3 +5,32 @@
 .ribbon-titles span {
     color: white;
 }
+
+.ribbon-titles li :hover {
+    color: darkgrey;
+}
+
+/*.ribbon-dropdown-element :hover {
+    background-color: green;
+}*/
+
+.ribbon-titles li ul {
+    background-color: #5a0c5e;
+    opacity: .80;
+}
+
+#searchbox {
+}
+
+#searchbox a {
+    display: inline;
+    font-size: 18px;
+}
+
+#searchtext {
+    color: #5a0c5e;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 4px 4px 4px 4px;
+    margin: 10px 0 0 3px;
+}

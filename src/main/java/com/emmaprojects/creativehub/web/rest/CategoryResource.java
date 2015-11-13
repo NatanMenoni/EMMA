@@ -128,7 +128,7 @@ public class CategoryResource {
                 category,
                 HttpStatus.OK))
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));*/
-        if(cat.isPresent() && cat.get().getSubCategories().size() > 1) {
+        if(cat.isPresent() && cat.get().getSubCategories().size() > 0) {
             Set<Category> categories = cat.map(c -> c.getSubCategories()).get();
             return new ResponseEntity<Set<Category>>(categories,HttpStatus.OK);
         }else{
@@ -146,7 +146,7 @@ public class CategoryResource {
     public ResponseEntity<Set<Category>> getProfessionalCategories() {
         log.debug("REST request to get Professional Categories");
         Optional<Category> cat = Optional.ofNullable(categoryRepository.findOneWithEagerRelationships(Constants.PROFESSIONAL_CATEGORY_ID));
-        if(cat.isPresent() && cat.get().getSubCategories().size() > 1) {
+        if(cat.isPresent() && cat.get().getSubCategories().size() > 0) {
             Set<Category> categories = cat.map(c -> c.getSubCategories()).get();
             return new ResponseEntity<Set<Category>>(categories,HttpStatus.OK);
         }else{
