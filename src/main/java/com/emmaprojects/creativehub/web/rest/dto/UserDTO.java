@@ -6,6 +6,8 @@ import com.emmaprojects.creativehub.domain.User;
 import org.hibernate.validator.constraints.Email;
 
 import javax.validation.constraints.*;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 /**
@@ -42,27 +44,49 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private List<String> roles;
+
+    private Set<ExternalAccountDTO> externalAccounts = new HashSet<>();
+
+
+
     public UserDTO() {
     }
 
-    public UserDTO(User user) {
-        this(user.getLogin(), null, user.getFirstName(), user.getLastName(),
-            user.getEmail(), user.getActivated(), user.getLangKey(),
-            user.getAuthorities().stream().map(Authority::getName)
-                .collect(Collectors.toSet()));
-    }
-
-    public UserDTO(String login, String password, String firstName, String lastName,
-        String email, boolean activated, String langKey, Set<String> authorities) {
-
+    public UserDTO(String login, String password, String firstName, String lastName, String email, String langKey,
+                   List<String> roles, Set<ExternalAccountDTO> externalAccounts) {
         this.login = login;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.activated = activated;
         this.langKey = langKey;
-        this.authorities = authorities;
+        this.roles = roles;
+        if (externalAccounts != null) {
+            this.externalAccounts.addAll(externalAccounts);
+        }
+    }
+
+    public UserDTO(String login, String password, String firstName, String lastName, String email, String langKey,
+                   List<String> roles) {
+        this(login, password, firstName, lastName, email, langKey, roles, null);
+    }
+
+    public UserDTO(String login, String firstName, String lastName, String email, ExternalAccountDTO externalAccount) {
+        this.login = login;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        if (externalAccount != null) {
+            this.externalAccounts.add(externalAccount);
+        }
+    }
+
+    public UserDTO(User user) {
+        this.firstName = user.getFirstName();
+        this.activated = user.getActivated();
+        this.authorities = user.getAuthorities().stream().map(a-> a.getName()).collect(Collectors.toSet());
+        this.email = user.getEmail();
     }
 
     public String getPassword() {
@@ -97,6 +121,26 @@ public class UserDTO {
         return authorities;
     }
 
+    public Set<ExternalAccountDTO> getExternalAccounts() {
+        return externalAccounts;
+    }
+
+    public void setExternalAccounts(Set<ExternalAccountDTO> externalAccounts) {
+        this.externalAccounts = externalAccounts;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public void setAuthorities(Set<String> authorities) {
+        this.authorities = authorities;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -110,4 +154,5 @@ public class UserDTO {
             ", authorities=" + authorities +
             "}";
     }
+
 }

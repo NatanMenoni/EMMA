@@ -21,7 +21,17 @@ spring:
         basename: classpath:/i18n/messages
     mvc:
         favicon:
-            enabled: false
+            enabled: true
+    social:
+        # see https://developers.facebook.com/docs/facebook-login/v2
+        facebook:
+            clientId: 884577588278606
+            clientSecret: 274fb8cbade8d18b5d311357ac216a3e
+        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+        google:
+            clientId: 849281270323-r1iepm02kgbcalq5im9sin0otle4ragl.apps.googleusercontent.com
+            clientSecret: wK_37xy1K8sq30X_YQynSiI-
+
     thymeleaf:
         mode: XHTML
 
