@@ -34,3 +34,8 @@
     border-radius: 4px 4px 4px 4px;
     margin: 10px 0 0 3px;
 }
+
+.navbar-default .navbar-nav > li:hover {
+    color: white;
+    border-bottom: 2px solid #FFFFFF!important;
+}
