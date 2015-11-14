@@ -79,3 +79,8 @@
 /**************************************************
                 End of Search Bar
 ***************************************************/
+
+.navbar-default .navbar-nav > li:hover {
+    color: white;
+    border-bottom: 2px solid #FFFFFF!important;
+}
