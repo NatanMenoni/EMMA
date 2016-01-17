@@ -39,6 +39,18 @@ spring:
         twitter:
             clientId: xxx
             clientSecret: xxx
+    mail:
+        from: emmacreativehub@gmail.com
+        host: smtp.gmail.com
+        port: 587
+        username: emmacreativehub@gmail.com
+        password: upfolios12345
+        protocol: smtp
+        tls: true
+        properties.mail.smtp:
+            auth: true
+            starttls.enable: true
+            ssl.trust: smtp.gmail.com
 
 security:
     basic:
@@ -54,7 +66,7 @@ jhipster:
         maxPoolSize: 50
         queueCapacity: 10000
     mail:
-        from: creativehub@localhost
+        from: emmacreativehub@gmail.com
     security:
         authentication:
             oauth:
