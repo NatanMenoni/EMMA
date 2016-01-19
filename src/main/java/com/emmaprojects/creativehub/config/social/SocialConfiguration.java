@@ -4,6 +4,7 @@ import com.emmaprojects.creativehub.repository.SocialUserConnectionRepository;
 import com.emmaprojects.creativehub.repository.CustomSocialUsersConnectionRepository;
 import com.emmaprojects.creativehub.security.social.CustomSignInAdapter;
 
+import com.emmaprojects.creativehub.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -39,6 +40,7 @@ public class SocialConfiguration implements SocialConfigurer {
 
     @Inject
     private SocialUserConnectionRepository socialUserConnectionRepository;
+
 
     @Override
     public void addConnectionFactories(ConnectionFactoryConfigurer connectionFactoryConfigurer, Environment environment) {

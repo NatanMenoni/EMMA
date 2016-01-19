@@ -28,6 +28,6 @@ public class CustomSignInAdapter implements SignInAdapter {
             null,
             user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(newAuth);
-        return jHipsterProperties.getSocial().getRedirectAfterSignIn();
+        return jHipsterProperties.getSocial().getRedirectAfterSignIn()+"/"+userId;
     }
 }
