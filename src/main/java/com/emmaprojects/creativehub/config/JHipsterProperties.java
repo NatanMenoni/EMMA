@@ -1,8 +1,8 @@
 package com.emmaprojects.creativehub.config;
 
-import javax.validation.constraints.NotNull;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * Properties specific to JHipster.
@@ -449,7 +449,7 @@ public class JHipsterProperties {
 
     public static class Social {
 
-        private String redirectAfterSignIn = "/social/socialsign";
+        private String redirectAfterSignIn = "/#/home";
 
         public String getRedirectAfterSignIn() {
             return redirectAfterSignIn;

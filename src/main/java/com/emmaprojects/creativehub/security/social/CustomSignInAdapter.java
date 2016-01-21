@@ -1,6 +1,5 @@
 package com.emmaprojects.creativehub.security.social;
 
-import com.emmaprojects.creativehub.config.JHipsterProperties;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,9 +16,6 @@ public class CustomSignInAdapter implements SignInAdapter {
     @Inject
     private UserDetailsService userDetailsService;
 
-    @Inject
-    private JHipsterProperties jHipsterProperties;
-
     @Override
     public String signIn(String userId, Connection<?> connection, NativeWebRequest request) {
         UserDetails user = userDetailsService.loadUserByUsername(userId);
@@ -28,6 +24,7 @@ public class CustomSignInAdapter implements SignInAdapter {
             null,
             user.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(newAuth);
-        return jHipsterProperties.getSocial().getRedirectAfterSignIn()+"/"+userId;
+        return null;
     }
+
 }

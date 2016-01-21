@@ -1,15 +1,14 @@
 package com.emmaprojects.creativehub.config.social;
 
-import com.emmaprojects.creativehub.repository.SocialUserConnectionRepository;
 import com.emmaprojects.creativehub.repository.CustomSocialUsersConnectionRepository;
+import com.emmaprojects.creativehub.repository.SocialUserConnectionRepository;
 import com.emmaprojects.creativehub.security.social.CustomSignInAdapter;
-
-import com.emmaprojects.creativehub.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.social.UserIdSource;
 import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
 import org.springframework.social.config.annotation.EnableSocial;
@@ -23,9 +22,10 @@ import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
-// jhipster-needle-add-social-connection-factory-import-package
 
 import javax.inject.Inject;
+
+// jhipster-needle-add-social-connection-factory-import-package
 
 /**
  * Basic Spring Social configuration.
@@ -40,6 +40,9 @@ public class SocialConfiguration implements SocialConfigurer {
 
     @Inject
     private SocialUserConnectionRepository socialUserConnectionRepository;
+
+    @Inject
+    private UserDetailsService userDetailsService;
 
 
     @Override
@@ -111,6 +114,7 @@ public class SocialConfiguration implements SocialConfigurer {
     public ProviderSignInController providerSignInController(ConnectionFactoryLocator connectionFactoryLocator, UsersConnectionRepository usersConnectionRepository, SignInAdapter signInAdapter) throws Exception {
         ProviderSignInController providerSignInController = new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, signInAdapter);
         providerSignInController.setSignUpUrl("/social/signup");
+        providerSignInController.setPostSignInUrl("/social/signin/{providerId}");
         return providerSignInController;
     }
 
