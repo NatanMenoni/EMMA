@@ -14,6 +14,19 @@
         },
         "password" : {
             "forgot": "Se olvidó su contraseña?"
-        }
+        },
+        "social": {
+            "or": "o",
+            "google": "Google Log In",
+            "facebook": "Facebook Log In"
+        },
+        "welcomeTitle": "Bienvenido a EMMA Projects",
+        "welcomeSubtitle": "Muestra lo que sos haciendo lo que te gusta.",
+        "subtitle1": "Conoce a los protagonistas del mundo artístico",
+        "subtitle1content": "En EMMA encontrarás un lugar para conectar e interactuar con los principales actores del ambiente.",
+        "subtitle2": "Lo último",
+        "subtitle2content" : "Enterate de los últimos trabajos de tus artistas preferidos.",
+        "subtitle3": "Compra y Venta",
+        "subtitle3content": "Compra las obras que más te gusten y encuentra compradores para tu arte."
     }
 }

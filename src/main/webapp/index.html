@@ -16,8 +16,11 @@
         <!-- build:css assets/styles/main.css -->
         <link rel="stylesheet" href="assets/styles/main.css">
         <link rel="stylesheet" href="assets/styles/ribbon.css">
+        <link rel="stylesheet" href="assets/styles/unify-app.css">
         <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/vendor/line-icons/line-icons.css">
+        <link rel="stylesheet" href="assets/vendor/sky-forms-pro/skyforms/css/sky-forms.css">
         <!-- endbuild -->
     </head>
     <body ng-app="creativehubApp">
@@ -27,7 +30,8 @@
         <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
         <div ui-view="navbar" ng-cloak=""></div>
         <div class="container">
-            <div class="well" ui-view="content"></div>
+            <!--div class="well" ui-view="content"></div-->
+            <div ui-view="content"></div>
 
             <div class="footer">
                 <p translate="footer">This is your footer</p>
@@ -70,6 +74,13 @@
         <!-- endbower -->
         <!-- endbuild -->
 
+        <!--sky-forms-->
+        <script src="assets/vendor/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+        <script src="assets/vendor/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+        <script src="assets/vendor/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+        <script src="assets/vendor/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+        <script src="assets/vendor/sky-forms-pro/skyforms/js/jquery.modal.js"></script>
+        <!--endsky-forms-->
 
     <!-- build:js({.tmp,src/main/webapp}) scripts/app.js -->
     <script src="scripts/app/app.js"></script>

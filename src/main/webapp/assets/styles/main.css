@@ -12,22 +12,6 @@ Hide ng-cloak on page load, https://docs.angularjs.org/api/ng/directive/ngCloak
 }
 
 /* ==========================================================================
-Developement Ribbon
-========================================================================== */
-.development {
-    position: absolute;
-    width: 149px;
-    height: 149px;
-    top: 0;
-    left: 0;
-    border: 0;
-    z-index: 1000;
-    background-image: url("../images/development_ribbon.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-/* ==========================================================================
 Version number in navbar
 ========================================================================== */
 .navbar-version {
@@ -149,9 +133,9 @@ ul#strengthBar {
     vertical-align:2px;
 }
 
-.point:last {
+/*.point:last {
     margin:0 !important;
-}
+}*/
 .point {
     background:#DDD;
     border-radius:2px;
@@ -165,4 +149,101 @@ ul#strengthBar {
 .readonly {
     background-color: #eee;
     opacity: 1;
+}
+
+/*=====================================================
+                Login Screen
+Source: HTML/Shop-UI/assets/css/shop.style.css
+=======================================================*/
+.log-reg h2.welcome-title {
+    font-size: 34px;
+    font-weight: 200;
+    line-height: 50px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.log-reg .info-block-v2 {
+    margin: 0 120px 20px 0;
+}
+
+.log-reg .info-block-v2 i {
+    float: left;
+    color: #5a0c5e;
+    font-size: 30px;
+    margin: 7px 15px 0 0;
+}
+
+.log-reg .info-block-in {
+    overflow: hidden;
+}
+
+.log-reg .info-block-in h3 {
+    color: #555;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.log-reg-block {
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 2px #ccc;
+}
+
+.log-reg-block h2 {
+    font-size: 22px;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+
+.log-reg-block a {
+    color: #687074;
+    text-decoration: underline;
+}
+
+.log-reg-block a:hover {
+    color: #18ba9b;
+}
+
+.log-reg-block label {
+    font-weight: normal;
+}
+
+.log-reg-block section {
+    margin-bottom: 5px;
+}
+
+/*Border Wings*/
+.log-reg .border-wings {
+    text-align: center;
+}
+
+.log-reg .border-wings span {
+    color: #687074;
+    font-size: 14px;
+    padding: 0 10px;
+    position: relative;
+    margin-bottom: 15px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.log-reg .border-wings span:before,
+.log-reg .border-wings span:after {
+    top: 10px;
+    height: 1px;
+    width: 100%;
+    content: " ";
+    background: #ccc;
+    position: absolute;
+}
+
+.log-reg .border-wings span:before {
+    left: 100%;
+}
+
+.log-reg .border-wings span:after {
+    right: 100%;
 }

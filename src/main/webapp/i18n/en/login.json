@@ -17,8 +17,16 @@
         },
         "social": {
             "or": "or",
-            "google": "Sign in with Google",
-            "facebook": "Sign in with Facebook"
-        }
+            "google": "Google Log In",
+            "facebook": "Facebook Log In"
+        },
+        "welcomeTitle": "Welcome to EMMA Projects",
+        "welcomeSubtitle": "Show what you are by doing what you like.",
+        "subtitle1": "Meet the artistic world",
+        "subtitle1content": "In EMMA you will find a place to connect and interact with the main actors of the industry.",
+        "subtitle2": "What's Hot",
+        "subtitle2content" : "Find out about the latest work of your preferred artists.",
+        "subtitle3": "Buy and Sell",
+        "subtitle3content": "Buy the art pieces that you like and find buyers for your art."
     }
 }
