@@ -69,7 +69,7 @@ public class AccountResourceTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        doNothing().when(mockMailService).sendActivationEmail(anyObject(), anyString());
+        doNothing().when(mockMailService).sendActivationEmail((User) anyObject(), anyString());
 
         AccountResource accountResource = new AccountResource();
         ReflectionTestUtils.setField(accountResource, "userRepository", userRepository);
@@ -128,7 +128,7 @@ public class AccountResourceTest {
             .andExpect(jsonPath("$.firstName").value("john"))
             .andExpect(jsonPath("$.lastName").value("doe"))
             .andExpect(jsonPath("$.email").value("john.doe@jhipter.com"))
-            .andExpect(jsonPath("$.roles").value(AuthoritiesConstants.ADMIN));
+            .andExpect(jsonPath("$.authorities").value(AuthoritiesConstants.ADMIN));
     }
 
     @Test
@@ -149,8 +149,9 @@ public class AccountResourceTest {
             "Joe",                  // firstName
             "Shmoe",                // lastName
             "joe@example.com",      // e-mail
+            true,                   // activated
             "en",                   // langKey
-            Arrays.asList(AuthoritiesConstants.USER)
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         restMvc.perform(
@@ -172,8 +173,9 @@ public class AccountResourceTest {
             "Funky",                // firstName
             "One",                  // lastName
             "funky@example.com",    // e-mail
+            true,                   // activated
             "en",                   // langKey
-            Arrays.asList(AuthoritiesConstants.USER)
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         restUserMockMvc.perform(
@@ -195,8 +197,9 @@ public class AccountResourceTest {
             "Bob",              // firstName
             "Green",            // lastName
             "invalid",          // e-mail <-- invalid
+            true,               // activated
             "en",               // langKey
-            Arrays.asList(AuthoritiesConstants.USER)
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         restUserMockMvc.perform(
@@ -219,13 +222,14 @@ public class AccountResourceTest {
             "Alice",                // firstName
             "Something",            // lastName
             "alice@example.com",    // e-mail
+            true,                   // activated
             "en",                   // langKey
-            Arrays.asList(AuthoritiesConstants.USER)
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         // Duplicate login, different e-mail
         UserDTO dup = new UserDTO(u.getLogin(), u.getPassword(), u.getLogin(), u.getLastName(),
-            "alicejr@example.com", u.getLangKey(), u.getRoles());
+            "alicejr@example.com", true, u.getLangKey(), u.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -255,13 +259,14 @@ public class AccountResourceTest {
             "John",                 // firstName
             "Doe",                  // lastName
             "john@example.com",     // e-mail
+            true,                   // activated
             "en",                   // langKey
-            Arrays.asList(AuthoritiesConstants.USER)
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.USER))
         );
 
         // Duplicate e-mail, different login
         UserDTO dup = new UserDTO("johnjr", u.getPassword(), u.getLogin(), u.getLastName(),
-            u.getEmail(), u.getLangKey(), u.getRoles());
+            u.getEmail(), true, u.getLangKey(), u.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -290,8 +295,9 @@ public class AccountResourceTest {
             "Bad",                  // firstName
             "Guy",                  // lastName
             "badguy@example.com",   // e-mail
+            true,                   // activated
             "en",                   // langKey
-            Arrays.asList(AuthoritiesConstants.ADMIN) // <-- only admin should be able to do that
+            new HashSet<>(Arrays.asList(AuthoritiesConstants.ADMIN)) // <-- only admin should be able to do that
         );
 
         restMvc.perform(

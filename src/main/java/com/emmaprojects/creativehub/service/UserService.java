@@ -12,9 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.social.connect.Connection;
-import org.springframework.social.connect.ConnectionRepository;
-import org.springframework.social.connect.UsersConnectionRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,9 +36,6 @@ public class UserService {
     @Inject
     private AuthorityRepository authorityRepository;
 
-    @Inject
-    private UsersConnectionRepository usersConnectionRepository;
-
     public Optional<User> activateRegistration(String key) {
         log.debug("Activating user for activation key {}", key);
         userRepository.findOneByActivationKey(key)
@@ -57,20 +51,20 @@ public class UserService {
     }
 
     public Optional<User> completePasswordReset(String newPassword, String key) {
-       log.debug("Reset user password for reset key {}", key);
+        log.debug("Reset user password for reset key {}", key);
 
-       return userRepository.findOneByResetKey(key)
+        return userRepository.findOneByResetKey(key)
             .filter(user -> {
                 ZonedDateTime oneDayAgo = ZonedDateTime.now().minusHours(24);
                 return user.getResetDate().isAfter(oneDayAgo);
-           })
-           .map(user -> {
+            })
+            .map(user -> {
                 user.setPassword(passwordEncoder.encode(newPassword));
                 user.setResetKey(null);
                 user.setResetDate(null);
                 userRepository.save(user);
                 return user;
-           });
+            });
     }
 
     public Optional<User> requestPasswordReset(String mail) {
@@ -84,9 +78,8 @@ public class UserService {
             });
     }
 
-
     public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-                                      String langKey, Connection<?> connection) {
+                                      String langKey) {
 
         User newUser = new User();
         Authority authority = authorityRepository.findOne("ROLE_USER");
@@ -100,42 +93,15 @@ public class UserService {
         newUser.setEmail(email);
         newUser.setLangKey(langKey);
         // new user is not active
-        newUser.setActivated(connection != null);
-        if (!newUser.getActivated()) {
-            // new user gets registration key
-            newUser.setActivationKey(RandomUtil.generateActivationKey());
-        }
+        newUser.setActivated(false);
+        // new user gets registration key
+        newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
-
-        if (connection != null) {
-            addConnection(login, connection);
-        }
-
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
-
-    public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-                                      String langKey) {
-        return createUserInformation(login, password, firstName, lastName, email, langKey, null);
-    }
-
-    public void addConnection(String login, Connection<?> connection) {
-        ConnectionRepository connectionRepository = usersConnectionRepository.createConnectionRepository(login);
-        if (connectionRepository.findConnections(connection.getKey().getProviderId()).isEmpty()) {
-            connectionRepository.addConnection(connection);
-        } else {
-            connectionRepository.updateConnection(connection);
-        }
-    }
-
-//
-//    public User createUserInformation(String login, String password, String firstName, String lastName, String email,
-//                                      String langKey) {
-//        return createUserInformation(login, password, firstName, lastName, email, langKey, null);
-//    }
 
     public void updateUserInformation(String firstName, String lastName, String email, String langKey) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(u -> {
@@ -177,17 +143,6 @@ public class UserService {
         User user = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
         user.getAuthorities().size(); // eagerly load the association
         return user;
-    }
-
-    public Optional<User> getUserBySocialConnection(Connection<?> connection) {
-        if (connection != null) {
-            List<String> userIds = usersConnectionRepository.findUserIdsWithConnection(connection);
-            if (!userIds.isEmpty()) {
-                return userRepository.findOneByLogin(userIds.iterator().next());
-            }
-        }
-
-        return Optional.empty();
     }
 
     /**

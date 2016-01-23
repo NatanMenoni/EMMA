@@ -1,11 +1,9 @@
 package com.emmaprojects.creativehub.web.rest.dto;
 
-import com.emmaprojects.creativehub.security.social.ExternalAccountProvider;
 import org.joda.time.DateTime;
 
 public class ExternalAccountDTO {
 
-	private ExternalAccountProvider externalProvider;
 	private String externalId;
 	private boolean connected;
 	private DateTime expireTime;
@@ -13,24 +11,16 @@ public class ExternalAccountDTO {
 	public ExternalAccountDTO() {
 	}
 
-	public ExternalAccountDTO(ExternalAccountProvider externalProvider,
-                              String externalId) {
+	public ExternalAccountDTO(String externalId) {
 		super();
-		this.externalProvider = externalProvider;
 		this.externalId = externalId;
 	}
 
-	public ExternalAccountDTO(ExternalAccountProvider externalProvider,
-                              boolean connected, DateTime expireTime) {
-		super();
-		this.externalProvider = externalProvider;
-		this.connected = connected;
-		this.expireTime = expireTime;
-	}
-
-	public ExternalAccountProvider getExternalProvider() {
-		return externalProvider;
-	}
+    public ExternalAccountDTO(boolean connected, DateTime expireTime) {
+        super();
+        this.connected = connected;
+        this.expireTime = expireTime;
+    }
 
 	public String getExternalId() {
 		return externalId;
@@ -47,7 +37,6 @@ public class ExternalAccountDTO {
 	@Override
     public String toString() {
         return "ExternalAccountDTO{" +
-        "externalProvider='" + externalProvider + '\'' +
         ", externalId=" + externalId +
         ", connected=" + connected +
         ", expireTime=" + expireTime +
