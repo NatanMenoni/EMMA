@@ -2,25 +2,27 @@ package com.emmaprojects.creativehub.config.social;
 
 import com.emmaprojects.creativehub.repository.CustomSocialUsersConnectionRepository;
 import com.emmaprojects.creativehub.repository.SocialUserConnectionRepository;
-import com.emmaprojects.creativehub.security.social.CustomSignInAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.social.UserIdSource;
 import org.springframework.social.config.annotation.ConnectionFactoryConfigurer;
 import org.springframework.social.config.annotation.EnableSocial;
 import org.springframework.social.config.annotation.SocialConfigurer;
 import org.springframework.social.connect.ConnectionFactoryLocator;
 import org.springframework.social.connect.UsersConnectionRepository;
-import org.springframework.social.connect.web.ProviderSignInController;
-import org.springframework.social.connect.web.ProviderSignInUtils;
-import org.springframework.social.connect.web.SignInAdapter;
 import org.springframework.social.facebook.connect.FacebookConnectionFactory;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.security.AuthenticationNameUserIdSource;
+import org.springframework.social.security.SocialUser;
+import org.springframework.social.security.SocialUserDetails;
+import org.springframework.social.security.SocialUserDetailsService;
 import org.springframework.social.twitter.connect.TwitterConnectionFactory;
 
 import javax.inject.Inject;
@@ -43,7 +45,6 @@ public class SocialConfiguration implements SocialConfigurer {
 
     @Inject
     private UserDetailsService userDetailsService;
-
 
     @Override
     public void addConnectionFactories(ConnectionFactoryConfigurer connectionFactoryConfigurer, Environment environment) {
@@ -106,20 +107,14 @@ public class SocialConfiguration implements SocialConfigurer {
     }
 
     @Bean
-    public SignInAdapter signInAdapter() {
-        return new CustomSignInAdapter();
+    public SocialUserDetailsService socialUserDetailsService(){
+        return new SocialUserDetailsService() {
+            @Override
+            public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException, DataAccessException {
+                UserDetails userDetails = userDetailsService.loadUserByUsername(userId);
+                return new SocialUser(userDetails.getUsername(),userDetails.getPassword(),userDetails.getAuthorities());
+            }
+        };
     }
 
-    @Bean
-    public ProviderSignInController providerSignInController(ConnectionFactoryLocator connectionFactoryLocator, UsersConnectionRepository usersConnectionRepository, SignInAdapter signInAdapter) throws Exception {
-        ProviderSignInController providerSignInController = new ProviderSignInController(connectionFactoryLocator, usersConnectionRepository, signInAdapter);
-        providerSignInController.setSignUpUrl("/social/signup");
-        providerSignInController.setPostSignInUrl("/social/signin/{providerId}");
-        return providerSignInController;
-    }
-
-    @Bean
-    public ProviderSignInUtils getProviderSignInUtils(ConnectionFactoryLocator connectionFactoryLocator, UsersConnectionRepository usersConnectionRepository) {
-        return new ProviderSignInUtils(connectionFactoryLocator, usersConnectionRepository);
-    }
 }

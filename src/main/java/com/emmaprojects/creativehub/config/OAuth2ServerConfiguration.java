@@ -3,10 +3,12 @@ package com.emmaprojects.creativehub.config;
 import com.emmaprojects.creativehub.security.AjaxLogoutSuccessHandler;
 import com.emmaprojects.creativehub.security.AuthoritiesConstants;
 import com.emmaprojects.creativehub.security.Http401UnauthorizedEntryPoint;
+import com.emmaprojects.creativehub.security.social.SocialAuthenticationSuccessHandler;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -16,9 +18,12 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
+import org.springframework.security.oauth2.provider.token.AuthorizationServerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.social.security.SocialAuthenticationFilter;
+import org.springframework.social.security.SpringSocialConfigurer;
 
 import javax.inject.Inject;
 import javax.sql.DataSource;
@@ -36,26 +41,49 @@ public class OAuth2ServerConfiguration {
         @Inject
         private AjaxLogoutSuccessHandler ajaxLogoutSuccessHandler;
 
+        @Inject
+        private AuthorizationServerTokenServices authTokenServices;
+
+        @Inject
+        private JHipsterProperties jHipsterProperties;
+
         @Override
         public void configure(HttpSecurity http) throws Exception {
+
+            SpringSocialConfigurer socialCfg = new SpringSocialConfigurer();
+            socialCfg
+                .addObjectPostProcessor(new ObjectPostProcessor<SocialAuthenticationFilter>() {
+                    @SuppressWarnings("unchecked")
+                    public SocialAuthenticationFilter postProcess(SocialAuthenticationFilter filter){
+                        filter.setAuthenticationSuccessHandler(
+                            new SocialAuthenticationSuccessHandler(
+                                authTokenServices,
+                                jHipsterProperties.getSecurity().getAuthentication().getOauth().getClientid()
+                            )
+                        );
+                        return filter;
+                    }
+                });
+
             http
                 .exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)
-            .and()
+                .and()
                 .logout()
                 .logoutUrl("/api/logout")
                 .logoutSuccessHandler(ajaxLogoutSuccessHandler)
-            .and()
+                .and()
                 .csrf()
                 .requireCsrfProtectionMatcher(new AntPathRequestMatcher("/oauth/authorize"))
                 .disable()
                 .headers()
                 .frameOptions().disable()
-            .and()
+                .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and()
+                .and()
                 .authorizeRequests()
+                .antMatchers("/signin/**").permitAll()
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/register").permitAll()
                 .antMatchers("/social/**").permitAll()
