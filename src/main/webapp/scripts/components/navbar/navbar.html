@@ -1,166 +1,176 @@
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#/"><img src="../../../assets/images/emma_projects_logo.png" alt="logo" style="max-width: 100%; max-height: 100%"></a>
+<!DOCTYPE html>
+
+<body class="header-fixed">
+<div class="wrapper">
+    <!--=== Header v5 ===-->
+    <div class="header-v5 header-static" ng-switch="isAuthenticated()">
+        <!-- Topbar v3 -->
+        <div class="topbar-v3">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- Topbar Navigation -->
+                        <ul class="left-topbar" ng-controller="LanguageController">
+                            <li class="item-topbar">
+                                <img width="9" height="9" src="/assets/images/triangle-white.png"/>
+                                <a><text translate="global.menu.language">Language</text> ({{currentLanguage()}})</a>
+                                <ul class="language">
+                                    <li ng-repeat="language in languages" ng-click="changeLanguage(language)">
+                                        <a href="#">{{language | findLanguageFromKey}} ({{language}})</a></li>
+                                </ul>
+
+                            </li>
+                        </ul><!--/end left-topbar-->
+                    </div>
+                    <div class="col-sm-6">
+                        <ul class="list-inline left-topbar pull-right">
+                            <li class="item-topbar" ng-switch-when="true">
+                                <img width="9" height="9" src="/assets/images/triangle-white.png"/>
+                                <a  translate="creativehubApp.navbar.account.account">ACCOUNT</a>
+                                <ul class="language">
+                                    <li><a href="#" translate="creativehubApp.navbar.account.accountInfo">Account Information</a></li>
+                                    <li><a href="#" translate="creativehubApp.navbar.account.profile">Profile</a></li>
+                                    <li><a href="#" translate="creativehubApp.navbar.account.favorites">Favorites</a></li>
+                                    <li><a href="#" translate="creativehubApp.navbar.account.orders">Orders</a></li>
+                                    <li><a href="#" translate="creativehubApp.navbar.account.upload">Upload work</a></li>
+                                    <li><a href="" ng-click="logout()" translate="creativehubApp.navbar.account.logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul><!--/end left-topbar-->
+                        <ul class="list-inline right-topbar pull-right">
+                            <li><form class="search-form">
+                                <div class="form-group has-feedback negative8-margin-bottom">
+                                    <label for="search" class="sr-only">Search</label>
+                                    <input type="text" class="form-control form-control2" style="padding-right: 0px;" name="search" id="search" placeholder="{{ 'global.menu.searchPlaceholder' | translate }}">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                            </form></li>
+                            <li class="item-topbar">|</li>
+                            <li class="item-topbar" ng-switch-when="false"><a ui-sref="login" translate="creativehubApp.navbar.login">Login</a></li>
+                            <li class="item-topbar" ng-switch-when="false">|</li>
+                            <li class="item-topbar" ng-switch-when="false"><a ui-sref="register" translate="creativehubApp.navbar.register">Register</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div><!--/container-->
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
-            <ul class="ribbon-titles nav navbar-nav">
-                <li ui-sref-active="active">
-                    <a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <span class="hidden-sm" translate="global.menu.home">Home</span>
+        <!-- End Topbar v3 -->
+
+        <!-- Navbar -->
+        <div class="navbar navbar-default mega-menu" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img id="logo-header" src="/assets/images/logo_emma_header.png" alt="Logo">
                     </a>
-                </li>
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                            <span>
-                                <span class="hidden-sm" translate="global.menu.artworks">
-                                    Artworks
-                                </span>
-                                <b class="caret"></b>
-                            </span>
-                    </a>
-                <!--a class="dropdown-toggle" data-toggle="dropdown" href="">
-                    <span>
-                        <span class="hidden-sm" translate="global.menu.entities.main">
-                            Entities
-                        </span>
-                        <b class="caret"></b>
-                    </span>
-                </a-->
-                <ul class="dropdown-menu">
-                    <li ui-sref-active="active" ng-repeat="subCat in artworkCategories">
-                        <a ui-sref="{{subCat.name}}" data-toggle="collapse" data-target=".navbar-collapse.in">
-                            <span translate="creativehubApp.categories.artworks.{{subCat.name | lowercase}}">subcategory</span></a>
-                    </li>
-                </ul>
-                <!--ul class="dropdown-menu">
-                    <li ui-sref-active="active" ><a ui-sref="award" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.award">award</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="education" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.education">education</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="workExperience" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.workExperience">workExperience</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="profileEvent" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.profileEvent">profileEvent</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="country" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.country">country</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="address" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.address">address</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="telephone" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.telephone">telephone</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="document" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.document">document</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="userType" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.userType">userType</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="tag" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.tag">tag</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="category" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.category">category</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="workPiece" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.workPiece">workPiece</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="workCollection" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.workCollection">workCollection</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="profile" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.profile">profile</span></a></li>
-                    <li ui-sref-active="active" ><a ui-sref="artWorkPiece" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                    &#xA0;<span translate="global.menu.entities.artWorkPiece">artWorkPiece</span></a></li>
-                    <!-- JHipster will add entities to the menu here -->
-                <!--/ul-->
-            </li>
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="hidden-sm" translate="global.menu.professionals">
-                                Professionals
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ng-repeat="subCat in professionalCategories" class="ribbon-dropdown-element">
-                            <a ui-sref="{{subCat.name}}" data-toggle="collapse" data-target=".navbar-collapse.in">
-                                <span translate="creativehubApp.categories.professionals.{{subCat.name | lowercase}}">subcategory</span></a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <!-- Shopping Cart -->
+                    <ul class="list-inline shop-badge badge-lists badge-icons pull-right">
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                            <span class="badge badge-sea rounded-x">3</span>
+                            <ul class="list-unstyled badge-open mCustomScrollbar" data-mcs-theme="minimal-dark">
+                                <li>
+                                    <img src="assets/img/thumb/05.jpg" alt="">
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Black Glasses</span>
+                                        <small>1 x $400.00</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/thumb/02.jpg" alt="">
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Black Glasses</span>
+                                        <small>1 x $400.00</small>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/thumb/03.jpg" alt="">
+                                    <button type="button" class="close">×</button>
+                                    <div class="overflow-h">
+                                        <span>Black Glasses</span>
+                                        <small>1 x $400.00</small>
+                                    </div>
+                                </li>
+                                <li class="subtotal">
+                                    <div class="overflow-h margin-bottom-10">
+                                        <span>Subtotal</span>
+                                        <span class="pull-right subtotal-cost">$1200.00</span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <a href="shop-ui-inner.html" class="btn-u btn-brd btn-brd-hover btn-u-sea-shop btn-block">View Cart</a>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <a href="shop-ui-add-to-cart.html" class="btn-u btn-u-sea-shop btn-block">Checkout</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
-                <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="hidden-sm" translate="global.menu.account.main">
-                                Account
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>
-                            &#xA0;<span translate="global.menu.account.settings">Settings</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>
-                            &#xA0;<span translate="global.menu.account.password">Password</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
-                            &#xA0;<span translate="global.menu.account.logout">Sign out</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span>
-                            &#xA0;<span translate="global.menu.account.login">Sign in</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span translate="global.menu.account.register">Register</span></a></li>
-                    </ul>
-                </li>
-                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="hidden-sm" translate="global.menu.admin.main">Administration</span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>
-                            &#xA0;<span translate="global.menu.admin.user-management">User management</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span>
-                            &#xA0;<span translate="global.menu.admin.metrics">Metrics</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span>
-                            &#xA0;<span translate="global.menu.admin.health">Health</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span>
-                            &#xA0;<span translate="global.menu.admin.configuration">Configuration</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>
-                            &#xA0;<span translate="global.menu.admin.audits">Audits</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>
-                            &#xA0;<span translate="global.menu.admin.logs">Logs</span></a></li>
-                        <li ng-hide="inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>
-                            &#xA0;<span translate="global.menu.admin.apidocs">API</span></a></li>
-                    </ul>
-                </li>
-                <li ui-sref-active="active" class="dropdown pointer" ng-controller="LanguageController">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="glyphicon glyphicon-flag"></span>
-                            <span class="hidden-sm" translate="global.menu.language">Language</span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li active-menu="{{language}}" ng-repeat="language in languages">
-                            <a href="" ng-click="changeLanguage(language)" data-toggle="collapse" data-target=".navbar-collapse.in">{{language | findLanguageFromKey}}</a>
+                    <!-- End Shopping Cart -->
+
+                    <!-- Nav Menu -->
+                    <ul class="nav navbar-nav">
+                        <!-- Pages -->
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" translate="creativehubApp.navbar.artwork">
+                                Artwork
+                            </a>
+                            <ul class="dropdown-menu" >
+                                <li ui-sref="login"  ng-repeat="subCat in artworkCategories"><a href="" translate="creativehubApp.categories.artworks.{{removeBlank(subCat.name) | lowercase}}">{{subCat.name}}</a></li>
+                                <li><a href="" translate="creativehubApp.categories.artworks.all">All</a></li>
+                            </ul>
+                        </li>
+                        <!-- End Pages -->
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" translate="creativehubApp.navbar.designers">
+                                Designers
+                            </a>
+                            <ul class="dropdown-menu" >
+
+                                <li ng-repeat="subCat in professionalCategories"><a href="" translate="creativehubApp.categories.professionals.{{removeBlank(subCat.name) | lowercase}}">{{subCat.name}}</a></li>
+                                <li><a href="" translate="creativehubApp.categories.professionals.all">All</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" translate="creativehubApp.navbar.events">
+                                Events
+                            </a>
+                            <ul class="dropdown-menu" >
+                                <li ng-repeat="subCat in eventCategories"><a href="" translate="creativehubApp.categories.events.{{removeBlank(subCat.name) | lowercase}}">{{subCat.name}}</a></li>
+                                <li><a href="" translate="creativehubApp.categories.events.all">All</a></li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
-                <!-- Search Block -->
-                <li class="search-container">
-                    <form action="" class="search-form">
-                        <div class="form-group has-feedback">
-                            <label for="search" class="sr-only">Search</label>
-                            <input type="text" class="form-control" name="search" id="search" placeholder="{{ 'global.menu.searchPlaceholder' | translate }}">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </form>
-                </li>
-                <!-- End Search Block -->
-            </ul>
+                    <!-- End Nav Menu -->
+                </div>
+            </div>
         </div>
+        <!-- End Navbar -->
     </div>
-</nav>
+    <!--=== End Header v5 ===-->
+
+</div><!--/wrapper-->
+
+
+
+</body>
+</html>

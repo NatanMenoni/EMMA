@@ -19,12 +19,41 @@
         <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css">
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
         <!-- endbuild -->
+        <!-- unify -->
+            <!-- Favicon -->
+            <link rel="shortcut icon" href="favicon.ico">
+
+            <!-- Web Fonts -->
+            <link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+            <!-- CSS Global Compulsory -->
+            <link rel="stylesheet" href="assets/styles/unify/bootstrap.min.css">
+            <link rel="stylesheet" href="assets/styles/unify/shop.style.css">
+
+            <!-- CSS Header and Footer -->
+            <link rel="stylesheet" href="assets/styles/unify/header-v5.css">
+            <link rel="stylesheet" href="assets/styles/unify/footer-v4.css">
+
+            <!-- CSS Implementing Plugins -->
+            <link rel="stylesheet" href="assets/styles/unify/animate.css">
+            <link rel="stylesheet" href="assets/styles/unify/line-icons.css">
+            <link rel="stylesheet" href="assets/styles/unify/font-awesome.min.css">
+            <link rel="stylesheet" href="assets/styles/unify/jquery.mCustomScrollbar.css">
+            <link rel="stylesheet" href="assets/styles/unify/owl.carousel.css">
+            <link rel="stylesheet" href="assets/styles/unify/settings.css">
+
+            <!-- CSS Theme -->
+            <link rel="stylesheet" href="assets/styles/unify/purple.css" id="style_color">
+
+            <!-- CSS Customization -->
+            <link rel="stylesheet" href="assets/styles/unify/custom.css">
+        <!-- endunify -->
     </head>
     <body ng-app="creativehubApp">
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
+
         <div ui-view="navbar" ng-cloak=""></div>
         <div class="container">
             <div class="well" ui-view="content"></div>
@@ -223,5 +252,34 @@
     <script src="scripts/app/entities/artWorkPiece/artWorkPiece-detail.controller.js"></script>
     <script src="scripts/components/entities/artWorkPiece/artWorkPiece.service.js"></script>
     <!-- endbuild -->
+    <!-- unify -->
+        <!-- JS Global Compulsory -->
+        <script src="scripts/unify/jquery.min.js"></script>
+        <script src="scripts/unify/jquery-migrate.min.js"></script>
+        <script src="scripts/unify/bootstrap.min.js"></script>
+        <!-- JS Implementing Plugins -->
+        <script src="scripts/unify/back-to-top.js"></script>
+        <script src="scripts/unify/smoothScroll.js"></script>
+        <script src="scripts/unify/jquery.parallax.js"></script>
+        <script src="scripts/unify/owl.carousel.js"></script>
+        <script src="scripts/unify/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="scripts/unify/jquery.themepunch.tools.min.js"></script>
+        <script src="scripts/unify/jquery.themepunch.revolution.min.js"></script>
+        <!-- JS Customization -->
+        <script src="scripts/unify/custom.js"></script>
+        <!-- JS Page Level -->
+        <script src="scripts/unify/shop.app.js"></script>
+        <script src="scripts/unify/owl-carousel.js"></script>
+        <script src="scripts/unify/revolution-slider.js"></script>
+        <script>
+            jQuery(document).ready(function() {
+                App.init();
+                App.initScrollBar();
+                App.initParallaxBg();
+                OwlCarousel.initOwlCarousel();
+                RevolutionSlider.initRSfullWidth();
+            });
+        </script>
+    <!--endunify-->
 </body>
 </html>

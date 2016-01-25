@@ -78,6 +78,7 @@ angular.module('creativehubApp', ['LocalStorageModule', 'tmh.dynamicLocale', 'pa
                 translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
                     $translatePartialLoader.addPart('global');
                     $translatePartialLoader.addPart('category');
+                    $translatePartialLoader.addPart('navbar');
                 }]
             }
         });

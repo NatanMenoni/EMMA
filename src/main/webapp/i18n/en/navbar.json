@@ -1,0 +1,21 @@
+{
+    "creativehubApp": {
+        "navbar":{
+             "account" : {
+                    "account": "Account",
+                    "accountInfo": "Account Information",
+                    "profile": "Profile",
+                    "favorites": "Favorites",
+                    "orders": "Orders",
+                    "upload": "Upload Work",
+                    "logout": "Logout"
+            },
+            "login":"Login",
+            "register":"Register",
+            "artwork":"Artwork",
+            "designers":"Designers",
+            "events":"Events"
+        }
+    }
+
+}

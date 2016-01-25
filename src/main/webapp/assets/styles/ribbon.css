@@ -35,10 +35,7 @@
     margin: 10px 0 0 3px;
 }
 
-.navbar-default .navbar-nav > li:hover {
-    color: white;
-    border-bottom: 2px solid #FFFFFF!important;
-}
+
 
 
 /**************************************************
@@ -49,18 +46,16 @@
 }
 
 .search-form {
-    width: 200px;
-    padding-top: 9px;
+    width: 300px;
 }
 .search-form .form-group {
     float:  right !important;
     transition: all 0.35s, border-radius 0s;
-    width: 32px;
-    height: 32px;
-    background-color: #fff;
+    width: 25px;
+    height: 25px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
     border-radius: 25px;
-    border: 1px solid #ccc;
+    border: 2px solid #fff;
 }
 .search-form .form-group input.form-control {
     /*padding-right: 20px;*/
@@ -68,7 +63,7 @@
     background: transparent;
     box-shadow: none;
     display:inline;
-    color: #5a0c5e;
+    color: #fff;
 }
 .search-form .form-group input.form-control::-webkit-input-placeholder {
     display: none;
@@ -91,17 +86,18 @@
 }
 .search-form .form-group span.form-control-feedback {
     top: -1px;
-    right: -2px;
+    right: -8px;
     z-index: 2;
     display: block;
     width: 34px;
     height: 34px;
     line-height: 34px;
     text-align: center;
-    color: #5a0c5e;
+    color: #fff;
     left: initial;
     font-size: 16px;
 }
+
 /**************************************************
                 End of Search Bar
 ***************************************************/

@@ -24,14 +24,28 @@
         },
         "categories" : {
           "artworks": {
-            "painting": "Pintura",
-            "sculpture": "Escultura",
-            "drawing": "Dibujo"
+              "paintings":"Pintura",
+              "sculpture":"Escultura",
+              "photography": "Fotografía",
+              "worksonpaper": "Obras Sobre Papel",
+              "prints":"Grabados",
+              "designobjects":"Objetos de Diseño",
+              "all":"Todos"
           },
           "professionals": {
-              "graphicDesign": "Diseño Gráfico",
-              "architecture": "Arquitectura",
-              "webDesign": "Diseño Web"
+              "graphicdesign": "Diseño Gráfico",
+              "webdesign": "Diseño Web",
+              "industrialdesign": "Diseño Industrial",
+              "interiordesign": "Diseño de Interiores",
+              "animation": "Animación",
+              "architecture":"Arquitectura",
+              "all":"Todos"
+          },
+          "events":{
+              "design":"Diseño",
+              "art":"Arte",
+              "all":"Todos"
+
           }
         }
     }

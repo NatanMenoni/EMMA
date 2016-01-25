@@ -20,4 +20,10 @@ angular.module('creativehubApp')
         CategoryExtended.getProfessionalCategories().success(function(data){
             $scope.professionalCategories = data;
         });
+        $scope.eventCategories = {};
+        CategoryExtended.getEventCategories().success(function(data){
+            $scope.eventCategories = data;
+        });
+        $scope.removeBlank = function(word){
+            return word.replace(/ /g,'');};
     });

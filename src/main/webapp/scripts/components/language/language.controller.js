@@ -10,6 +10,12 @@ angular.module('creativehubApp')
         Language.getAll().then(function (languages) {
             $scope.languages = languages;
         });
+
+        $scope.currentLanguage = function(){
+            return Language.getCurrentLang();
+        }
+
+
     })
     .filter('findLanguageFromKey', function () {
         return function (lang) {

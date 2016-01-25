@@ -11,6 +11,9 @@ angular.module('creativehubApp')
             },
             getProfessionalCategories: function(){
                 return $http({method: 'GET', url: 'api/categories/professional'});
-            }
+            },
+           getEventCategories: function(){
+               return $http({method: 'GET', url: 'api/categories/events'});
+           }
        };
     }]);

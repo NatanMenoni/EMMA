@@ -1,0 +1,21 @@
+{
+    "creativehubApp": {
+        "navbar":{
+             "account" : {
+                 "account": "Cuenta",
+                 "accountInfo": "Información de Cuenta",
+                 "profile": "Perfil",
+                 "favorites": "Favoritos",
+                 "orders": "Órdenes",
+                 "upload": "Subir Trabajo",
+                 "logout": "Salir"
+             },
+            "login":"Iniciar Sesión",
+            "register":"Registrarse",
+            "artwork":"Obras Artísticas",
+            "designers":"Diseñadores",
+            "events":"Eventos"
+      }
+    }
+
+}

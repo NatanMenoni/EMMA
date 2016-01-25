@@ -14,6 +14,17 @@ angular.module('creativehubApp')
                 deferred.resolve(language);
                 return deferred.promise;
             },
+            getCurrentLang: function () {
+                var deferred = $q.defer();
+                var language = $translate.storage().get('NG_TRANSLATE_LANG_KEY');
+
+                if (angular.isUndefined(language)) {
+                    language = 'en';
+                }
+
+                deferred.resolve(language);
+                return language;
+            },
             getAll: function () {
                 var deferred = $q.defer();
                 deferred.resolve(LANGUAGES);

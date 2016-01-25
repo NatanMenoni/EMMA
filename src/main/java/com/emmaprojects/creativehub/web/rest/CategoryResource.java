@@ -153,4 +153,22 @@ public class CategoryResource {
             return new ResponseEntity<Set<Category>>(HttpStatus.NOT_FOUND);
         }
     }
+
+    /**
+     * GET  /categories/artwork -> obtener categorias hijas de Professional.
+     */
+    @RequestMapping(value = "/categories/events",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<Set<Category>> getEventCategories() {
+        log.debug("REST request to get Professional Categories");
+        Optional<Category> cat = Optional.ofNullable(categoryRepository.findOneWithEagerRelationships(Constants.EVENTS_CATEGORY_ID));
+        if(cat.isPresent() && cat.get().getSubCategories().size() > 0) {
+            Set<Category> categories = cat.map(c -> c.getSubCategories()).get();
+            return new ResponseEntity<Set<Category>>(categories,HttpStatus.OK);
+        }else{
+            return new ResponseEntity<Set<Category>>(HttpStatus.NOT_FOUND);
+        }
+    }
 }
